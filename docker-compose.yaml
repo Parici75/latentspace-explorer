@@ -1,0 +1,38 @@
+x-python-image: &python-image
+
+services:
+
+  app:
+    container_name: latentspaceexplorer-app
+    image: latentspaceexplorer-app
+    restart: always
+    command:
+      - --reload --log-level=debug
+    ports:
+      - 8050:8050
+    depends_on:
+      - redis-db
+    networks:
+      - dev_net
+    environment:
+      - REDIS_HOST=redis-db
+    env_file:
+      - ./.env.dev
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        PYTHON_DOCKER_IMAGE: *python-image
+
+  redis-db:
+    container_name: redis-db
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    networks:
+      - dev_net
+
+networks:
+  dev_net:
+    name: dev_net

@@ -1,0 +1,2 @@
+class RedisConnectionError(Exception):
+    pass
