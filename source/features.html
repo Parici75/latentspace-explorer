@@ -278,7 +278,7 @@
 <p>A variety of exploratory analysis tools are available to assess the structure of the dataset.</p>
 <section id="latent-space-clusters">
 <h2>Latent space clusters<a class="headerlink" href="#latent-space-clusters" title="Link to this heading">¶</a></h2>
-<p>The density of each component of the mixture models are obtained from the Gaussian mixture model and used to :</p>
+<p>The densities of each component of the mixture models are obtained from the Gaussian mixture model and used to :</p>
 <ul class="simple">
 <li><p>assign “hard” label to a datapoint based on the dominant component. This label is used to color code the datapoint.</p></li>
 <li><p>assign “soft” labels to a datapoint based on each components relative density. The maximum relative density determines the opacity of each data point’s color.</p></li>
@@ -290,12 +290,12 @@
 </section>
 <section id="plot-clusters">
 <h2>Plot clusters<a class="headerlink" href="#plot-clusters" title="Link to this heading">¶</a></h2>
-<p>Plotted data can be further explored through K-means clustering.</p>
-<p>⚠️ Note that this clustering is designed as a visual inspection tool : it only uses the current dimensions and data points being plotted, independently of the latent distribution of the dataset.</p>
+<p>The plotted data can be further analyzed using K-means clustering.</p>
+<p>⚠️ Note that that this feature is intended for exploratory purposes: it only considers the visible dimensions and current data points, without taking into account the underlying structure of the dataset.</p>
 </section>
 <section id="gini-impurity-index">
 <h2>Gini impurity index<a class="headerlink" href="#gini-impurity-index" title="Link to this heading">¶</a></h2>
-<p>When slicing the data along a dimension, this inset displays the <a class="reference external" href="https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity"><em>weighted average gini impurity index</em></a> of the Gaussian model on the partition defined by the dimensions <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">slicer</span></code>.</p>
+<p>When slicing the data along a dimension, this inset displays the <a class="reference external" href="https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity"><em>weighted average gini impurity index</em></a> of the Gaussian model on the partition defined by <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">slicer</span></code>.</p>
 <p>This metrics quantify how well the partition of the data by the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">slicer</span></code> dimension is reflected in the Gaussian mixture model’s clustering.</p>
 </section>
 <section id="plot-tabs">

@@ -2,7 +2,7 @@
 A variety of exploratory analysis tools are available to assess the structure of the dataset.
 
 ### Latent space clusters
-The density of each component of the mixture models are obtained from the Gaussian mixture model and used to :
+The densities of each component of the mixture models are obtained from the Gaussian mixture model and used to :
 - assign "hard" label to a datapoint based on the dominant component. This label is used to color code the datapoint.
 - assign "soft" labels to a datapoint based on each components relative density. The maximum relative density determines the opacity of each data point's color.
 
@@ -10,12 +10,12 @@ The density of each component of the mixture models are obtained from the Gaussi
 This Gaussian mixture model can be further used to filter the distribution via the `Probability filter` slider. Decreasing slider's high bound filters out data point of decreasing log-probability (i.e., outliers) ; conversely, increasing slider's low bound filters out the most normal data points, hence highlighting outliers.
 
 ### Plot clusters
-Plotted data can be further explored through K-means clustering.
+The plotted data can be further analyzed using K-means clustering.
 
-⚠️ Note that this clustering is designed as a visual inspection tool : it only uses the current dimensions and data points being plotted, independently of the latent distribution of the dataset.
+⚠️ Note that that this feature is intended for exploratory purposes: it only considers the visible dimensions and current data points, without taking into account the underlying structure of the dataset.
 
 ### Gini impurity index
-When slicing the data along a dimension, this inset displays the [*weighted average gini impurity index*](https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity) of the Gaussian model on the partition defined by the dimensions `data slicer`.
+When slicing the data along a dimension, this inset displays the [*weighted average gini impurity index*](https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity) of the Gaussian model on the partition defined by `data slicer`.
 
 This metrics quantify how well the partition of the data by the `data slicer` dimension is reflected in the Gaussian mixture model's clustering.
 

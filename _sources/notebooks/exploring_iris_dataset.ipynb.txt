@@ -19,11 +19,11 @@
    "execution_count": 1,
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-10-12T14:43:33.046247Z",
-     "iopub.status.busy": "2024-10-12T14:43:33.045617Z",
-     "iopub.status.idle": "2024-10-12T14:43:34.832176Z",
-     "shell.execute_reply": "2024-10-12T14:43:34.831919Z",
-     "shell.execute_reply.started": "2024-10-12T14:43:33.046220Z"
+     "iopub.execute_input": "2024-10-12T22:30:09.667619Z",
+     "iopub.status.busy": "2024-10-12T22:30:09.667416Z",
+     "iopub.status.idle": "2024-10-12T22:30:12.375484Z",
+     "shell.execute_reply": "2024-10-12T22:30:12.375090Z",
+     "shell.execute_reply.started": "2024-10-12T22:30:09.667594Z"
     }
    },
    "outputs": [],
@@ -39,11 +39,11 @@
    "execution_count": 2,
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-10-12T14:43:34.833174Z",
-     "iopub.status.busy": "2024-10-12T14:43:34.833028Z",
-     "iopub.status.idle": "2024-10-12T14:43:34.837022Z",
-     "shell.execute_reply": "2024-10-12T14:43:34.836811Z",
-     "shell.execute_reply.started": "2024-10-12T14:43:34.833165Z"
+     "iopub.execute_input": "2024-10-12T22:30:12.377005Z",
+     "iopub.status.busy": "2024-10-12T22:30:12.376765Z",
+     "iopub.status.idle": "2024-10-12T22:30:12.386124Z",
+     "shell.execute_reply": "2024-10-12T22:30:12.385792Z",
+     "shell.execute_reply.started": "2024-10-12T22:30:12.376991Z"
     }
    },
    "outputs": [],
@@ -63,11 +63,11 @@
    "execution_count": 3,
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-10-12T14:43:34.837383Z",
-     "iopub.status.busy": "2024-10-12T14:43:34.837304Z",
-     "iopub.status.idle": "2024-10-12T14:43:34.839222Z",
-     "shell.execute_reply": "2024-10-12T14:43:34.839006Z",
-     "shell.execute_reply.started": "2024-10-12T14:43:34.837375Z"
+     "iopub.execute_input": "2024-10-12T22:30:12.386671Z",
+     "iopub.status.busy": "2024-10-12T22:30:12.386553Z",
+     "iopub.status.idle": "2024-10-12T22:30:12.438496Z",
+     "shell.execute_reply": "2024-10-12T22:30:12.438041Z",
+     "shell.execute_reply.started": "2024-10-12T22:30:12.386659Z"
     }
    },
    "outputs": [
@@ -75,42 +75,9 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "2024-10-12 16:43:34 - root - DEBUG: test\n"
-     ]
-    }
-   ],
-   "source": [
-    "import logging\n",
-    "\n",
-    "logger = logging.getLogger()\n",
-    "logger.setLevel(logging.DEBUG)\n",
-    "logging.debug(\"test\")"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "metadata": {
-    "execution": {
-     "iopub.execute_input": "2024-10-12T14:43:34.839550Z",
-     "iopub.status.busy": "2024-10-12T14:43:34.839474Z",
-     "iopub.status.idle": "2024-10-12T14:43:34.878921Z",
-     "shell.execute_reply": "2024-10-12T14:43:34.878634Z",
-     "shell.execute_reply.started": "2024-10-12T14:43:34.839543Z"
-    }
-   },
-   "outputs": [
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "2024-10-12 16:43:34 - root - DEBUG: Connection <redis.connection.ConnectionPool(<redis.connection.Connection(host=localhost,port=6379,db=0)>)> OK\n",
-      "2024-10-12 16:43:34 - lse.app_builder - INFO: Redis database connection established!\n",
-      "2024-10-12 16:43:34 - root - DEBUG: Initializing cache for Dash app...\n",
-      "2024-10-12 16:43:34 - root - INFO: Cache is already initialized.\n",
-      "2024-10-12 16:43:34 - lse.app_builder - INFO: Flask cache manager initialized!\n",
-      "2024-10-12 16:43:34 - urllib3.connectionpool - DEBUG: Starting new HTTP connection (1): 127.0.0.1:8050\n",
-      "2024-10-12 16:43:34 - urllib3.connectionpool - DEBUG: http://127.0.0.1:8050 \"GET /_alive_5f665e32-2644-4eeb-916d-1ac93a4c5c40 HTTP/1.1\" 200 5\n"
+      "2024-10-13 00:30:12 - lse.app_builder - INFO: Redis database connection established!\n",
+      "2024-10-13 00:30:12 - root - INFO: Cache is already initialized.\n",
+      "2024-10-13 00:30:12 - lse.app_builder - INFO: Flask cache manager initialized!\n"
      ]
     },
     {
@@ -118,133 +85,6 @@
      "output_type": "stream",
      "text": [
       "Dash app running on http://127.0.0.1:8050/\n"
-     ]
-    },
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      "2024-10-12 16:46:29 - root - DEBUG: No datetime features in the :obj:`pandas.DataFrame` index: Index(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',\n",
-      "       ...\n",
-      "       '140', '141', '142', '143', '144', '145', '146', '147', '148', '149'],\n",
-      "      dtype='object', length=150)\n",
-      "2024-10-12 16:46:29 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:29 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:29 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:29 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:29 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:29 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:29 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:29 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:29 - root - DEBUG: display_reconstructed_data_table triggered by multidimensional-projection property\n",
-      "2024-10-12 16:46:29 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:29 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:29 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_data_infilter...\n",
-      "2024-10-12 16:46:29 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:29 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:31 - root - ERROR: No memoized cache found for function _get_gmm_hyperparameters\n",
-      "2024-10-12 16:46:31 - root - ERROR: No memoized cache found for function _reconstruct_data\n",
-      "2024-10-12 16:46:31 - root - ERROR: No memoized cache found for function _fit_gaussian_model\n",
-      "2024-10-12 16:46:31 - root - ERROR: No memoized cache found for function _fit_latent_models\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Setting memoized cache for function _get_gmm_hyperparameters\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_data_infilter...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features found in database\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Initializing Latent space models of session 4eff7cac-c03e-4ae5-879b-0dc97aa81655 with ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)'] features\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: No session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models found in database\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Finding optimal number of kernels explaining 80.0% of the variance in the data...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:31 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:31 - mltoolbox.anomaly_detection._anomaly_detection - INFO: Finding the best parameters in the ['spherical', 'tied', 'diag', 'full'] x [1] components grid\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Fitting Latent space models with PCs: [0, 1]\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Setting memoized cache for function _fit_latent_models\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Fitting tsne to 150 data points\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:33 - openTSNE.tsne - INFO: Precomputed initialization provided. Ignoring initalization-related parameters.\n",
-      "2024-10-12 16:46:33 - openTSNE.tsne - INFO: Automatically determined negative gradient method `bh`\n",
-      "2024-10-12 16:46:33 - openTSNE.tsne - INFO: Automatically determined negative gradient method `bh`\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Fitting Gaussian model with 1 kernels and diag covariance matrix\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Setting memoized cache for function _fit_gaussian_model\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_anomaly_quantifier...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_anomaly_quantifier...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_anomaly_quantifier...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Setting memoized cache for function _reconstruct_data\n",
-      "2024-10-12 16:46:34 - root - DEBUG: display_reconstructed_data_table triggered by signature property\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_data_infilter...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_data_infilter...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Reconstructing data preserving 80.0% of the original variance...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_latent_models...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_anomaly_quantifier...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_anomaly_quantifier...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_data_infilter...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_anomaly_quantifier...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_anomaly_quantifier...\n",
-      "2024-10-12 16:46:34 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:35 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:35 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:36 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:36 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:36 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:36 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:36 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:36 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:36 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:37 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:37 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:37 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:37 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:37 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n",
-      "2024-10-12 16:46:37 - root - DEBUG: Retrieving session data for 4eff7cac-c03e-4ae5-879b-0dc97aa81655_user_features...\n"
      ]
     }
    ],
