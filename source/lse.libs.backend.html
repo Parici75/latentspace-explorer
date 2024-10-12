@@ -273,16 +273,251 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="lse-libs-backend-package">
-<h1>lse.libs.backend package<a class="headerlink" href="#lse-libs-backend-package" title="Link to this heading">¶</a></h1>
+          <section id="module-lse.libs.backend">
+<span id="lse-libs-backend-package"></span><h1>lse.libs.backend package<a class="headerlink" href="#module-lse.libs.backend" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.</span></span><span class="sig-name descname"><span class="pre">AppBackend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession" title="lse.libs.backend.io.data_models.UserSession"><span class="pre">UserSession</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.backend.AppBackend" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">KMeansClassifier</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">GenericPlotter</span></code></p>
+<p>Main class for backend computations and plotting.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.apply_gaussian_filter">
+<span class="sig-name descname"><span class="pre">apply_gaussian_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proba_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.apply_gaussian_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Filters the dataset with the gaussian model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proba_threshold</strong> – A 2-values quantile array.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple of (filtered <code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> of datapoints with log_probabilities
+comprised in quantile (log_probabilities, proba_threshold),
+quantile).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.compute_datapoints_probas">
+<span class="sig-name descname"><span class="pre">compute_datapoints_probas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.compute_datapoints_probas" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the probability of the data in <cite>self.user_session</cite> under the generative model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series</span></code> of log probabilities.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.fit_gaussian_model">
+<span class="sig-name descname"><span class="pre">fit_gaussian_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_kernels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">covariance_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_var_retained</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.fit_gaussian_model" title="Link to this definition">¶</a></dt>
+<dd><p>Fit the gaussian model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.fit_latent_models">
+<span class="sig-name descname"><span class="pre">fit_latent_models</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pc_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lse.libs.backend.data_models.LatentModelArg" title="lse.libs.backend.data_models.LatentModelArg"><span class="pre">LatentModelArg</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.fit_latent_models" title="Link to this definition">¶</a></dt>
+<dd><p>Fit latent models.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.get_bic">
+<span class="sig-name descname"><span class="pre">get_bic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.get_bic" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the Bayesian Information Criterion for the model fitted.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.get_gmm_hyperparameters">
+<span class="sig-name descname"><span class="pre">get_gmm_hyperparameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var_explained</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">range</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.get_gmm_hyperparameters" title="Link to this definition">¶</a></dt>
+<dd><p>Finds best Gaussian model hyperparameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of the optimal pair of (n_components, covariance type)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.get_minimum_var_explained">
+<span class="sig-name descname"><span class="pre">get_minimum_var_explained</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selected_features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.get_minimum_var_explained" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the minimum variance explained for a subset of variables.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.get_mixture_densities">
+<span class="sig-name descname"><span class="pre">get_mixture_densities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.Series</span><span class="p"><span class="pre">[</span></span><span class="pre">NDArray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.get_mixture_densities" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the density of each gaussian components for the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series</span></code> of arrays.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.get_pipeline_output">
+<span class="sig-name descname"><span class="pre">get_pipeline_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_ref</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ModelType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pc_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.get_pipeline_output" title="Link to this definition">¶</a></dt>
+<dd><p>Returns projections of the data by the model specified by <cite>model_ref</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.get_weighted_average_gini">
+<span class="sig-name descname"><span class="pre">get_weighted_average_gini</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_slicer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.get_weighted_average_gini" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the weighted average gini impurity index of the gaussian model on the partition defined by <cite>data slicer</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.gini">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gini</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.gini" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the gini impurity index of the array.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.initialize_latent_models_pipeline">
+<span class="sig-name descname"><span class="pre">initialize_latent_models_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standardize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.initialize_latent_models_pipeline" title="Link to this definition">¶</a></dt>
+<dd><p>Initializes pipeline.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.plot_in_latent_space">
+<span class="sig-name descname"><span class="pre">plot_in_latent_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ModelType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_kmeans_clusters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_slicer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorscale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_symbol_dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loadings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.plot_in_latent_space" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the plot of the data in the latent space.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.plot_in_original_space">
+<span class="sig-name descname"><span class="pre">plot_in_original_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_slicer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorscale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_symbol_dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.plot_in_original_space" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a scatter or a heatmap plot of the original data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.plot_loadings_barplot">
+<span class="sig-name descname"><span class="pre">plot_loadings_barplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pc_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars_to_plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.plot_loadings_barplot" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.plot_loadings_direction">
+<span class="sig-name descname"><span class="pre">plot_loadings_direction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pc_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars_to_plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.plot_loadings_direction" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.predict_dominant_component">
+<span class="sig-name descname"><span class="pre">predict_dominant_component</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.predict_dominant_component" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the most likely gaussian the data belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series</span></code> of prediction.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.reconstruct_data">
+<span class="sig-name descname"><span class="pre">reconstruct_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signature_variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_explained</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.reconstruct_data" title="Link to this definition">¶</a></dt>
+<dd><p>Reconstructs data from principal components explaining at least a fraction=`var_explained` of the
+variance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.remove_loadings">
+<span class="sig-name descname"><span class="pre">remove_loadings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Figure</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#lse.libs.backend.AppBackend.remove_loadings" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.AppBackend.user_session_parameters">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user_session_parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSessionParameters" title="lse.libs.backend.io.data_models.UserSessionParameters"><span class="pre">UserSessionParameters</span></a></em><a class="headerlink" href="#lse.libs.backend.AppBackend.user_session_parameters" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lse.libs.backend.process_and_cache_data">
+<span class="sig-prename descclassname"><span class="pre">lse.libs.backend.</span></span><span class="sig-name descname"><span class="pre">process_and_cache_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lse.libs.backend.process_and_cache_data" title="Link to this definition">¶</a></dt>
+<dd><p>Processes and cache the data.</p>
+</dd></dl>
+
 <section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lse.libs.backend.io.html">lse.libs.backend.io package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OfflineUserSession"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OfflineUserSession.data_wrapper"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.data_wrapper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OfflineUserSession.model_post_init"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.model_post_init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OfflineUserSession.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.anomaly_quantifier</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OfflineUserSession.data_infilter"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.data_infilter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OfflineUserSession.features"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.features</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OfflineUserSession.models"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.models</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.data_wrapper"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.data_wrapper</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.key_manager"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.key_manager</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.model_post_init"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.model_post_init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.reset"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.anomaly_quantifier</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.data_infilter"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.data_infilter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.features"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.features</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.OnlineUserSession.models"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.models</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.process_and_cache_data"><code class="docutils literal notranslate"><span class="pre">process_and_cache_data()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#lse-libs-backend-io-data-models-module">lse.libs.backend.io.data_models module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#lse-libs-backend-io-utils-module">lse.libs.backend.io.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#module-lse.libs.backend.io.data_models">lse.libs.backend.io.data_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.DataWrapper"><code class="docutils literal notranslate"><span class="pre">DataWrapper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.DataWrapper.data"><code class="docutils literal notranslate"><span class="pre">DataWrapper.data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.DataWrapper.identifiers"><code class="docutils literal notranslate"><span class="pre">DataWrapper.identifiers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.DataWrapper.identifiers_dtypes"><code class="docutils literal notranslate"><span class="pre">DataWrapper.identifiers_dtypes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.DataWrapper.numerical_features"><code class="docutils literal notranslate"><span class="pre">DataWrapper.numerical_features</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.DataWrapper.numerical_identifiers"><code class="docutils literal notranslate"><span class="pre">DataWrapper.numerical_identifiers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyGroupType"><code class="docutils literal notranslate"><span class="pre">RedisKeyGroupType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyGroupType.DATA"><code class="docutils literal notranslate"><span class="pre">RedisKeyGroupType.DATA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyGroupType.USER"><code class="docutils literal notranslate"><span class="pre">RedisKeyGroupType.USER</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyType"><code class="docutils literal notranslate"><span class="pre">RedisKeyType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyType.ANOMALY_QUANTIFIER"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.ANOMALY_QUANTIFIER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyType.DATA_INFILTER"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.DATA_INFILTER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyType.FEATURES"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.FEATURES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.RedisKeyType.LATENT_MODELS"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.LATENT_MODELS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.Session"><code class="docutils literal notranslate"><span class="pre">Session</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.Session.session_id"><code class="docutils literal notranslate"><span class="pre">Session.session_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.SessionType"><code class="docutils literal notranslate"><span class="pre">SessionType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.SessionType.OFFLINE"><code class="docutils literal notranslate"><span class="pre">SessionType.OFFLINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.SessionType.ONLINE"><code class="docutils literal notranslate"><span class="pre">SessionType.ONLINE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession"><code class="docutils literal notranslate"><span class="pre">UserSession</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.data_wrapper"><code class="docutils literal notranslate"><span class="pre">UserSession.data_wrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.model_post_init"><code class="docutils literal notranslate"><span class="pre">UserSession.model_post_init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">UserSession.anomaly_quantifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.data_infilter"><code class="docutils literal notranslate"><span class="pre">UserSession.data_infilter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.features"><code class="docutils literal notranslate"><span class="pre">UserSession.features</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.filtered_data"><code class="docutils literal notranslate"><span class="pre">UserSession.filtered_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.models"><code class="docutils literal notranslate"><span class="pre">UserSession.models</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.n_samples"><code class="docutils literal notranslate"><span class="pre">UserSession.n_samples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSession.pca_data"><code class="docutils literal notranslate"><span class="pre">UserSession.pca_data</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSessionParameters"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSessionParameters.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.anomaly_quantifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSessionParameters.data_infilter"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.data_infilter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSessionParameters.features"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.features</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.data_models.UserSessionParameters.latent_models"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.latent_models</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lse.libs.backend.io.html#module-lse.libs.backend.io.utils">lse.libs.backend.io.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.utils.read_feathered_dataframe"><code class="docutils literal notranslate"><span class="pre">read_feathered_dataframe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="lse.libs.backend.io.html#lse.libs.backend.io.utils.serialize_to_feather"><code class="docutils literal notranslate"><span class="pre">serialize_to_feather()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -363,6 +598,30 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">lse.libs.backend package</a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend"><code class="docutils literal notranslate"><span class="pre">AppBackend</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.apply_gaussian_filter"><code class="docutils literal notranslate"><span class="pre">AppBackend.apply_gaussian_filter()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.compute_datapoints_probas"><code class="docutils literal notranslate"><span class="pre">AppBackend.compute_datapoints_probas()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.fit_gaussian_model"><code class="docutils literal notranslate"><span class="pre">AppBackend.fit_gaussian_model()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.fit_latent_models"><code class="docutils literal notranslate"><span class="pre">AppBackend.fit_latent_models()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.get_bic"><code class="docutils literal notranslate"><span class="pre">AppBackend.get_bic()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.get_gmm_hyperparameters"><code class="docutils literal notranslate"><span class="pre">AppBackend.get_gmm_hyperparameters()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.get_minimum_var_explained"><code class="docutils literal notranslate"><span class="pre">AppBackend.get_minimum_var_explained()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.get_mixture_densities"><code class="docutils literal notranslate"><span class="pre">AppBackend.get_mixture_densities()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.get_pipeline_output"><code class="docutils literal notranslate"><span class="pre">AppBackend.get_pipeline_output()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.get_weighted_average_gini"><code class="docutils literal notranslate"><span class="pre">AppBackend.get_weighted_average_gini()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.gini"><code class="docutils literal notranslate"><span class="pre">AppBackend.gini()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.initialize_latent_models_pipeline"><code class="docutils literal notranslate"><span class="pre">AppBackend.initialize_latent_models_pipeline()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.plot_in_latent_space"><code class="docutils literal notranslate"><span class="pre">AppBackend.plot_in_latent_space()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.plot_in_original_space"><code class="docutils literal notranslate"><span class="pre">AppBackend.plot_in_original_space()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.plot_loadings_barplot"><code class="docutils literal notranslate"><span class="pre">AppBackend.plot_loadings_barplot()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.plot_loadings_direction"><code class="docutils literal notranslate"><span class="pre">AppBackend.plot_loadings_direction()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.predict_dominant_component"><code class="docutils literal notranslate"><span class="pre">AppBackend.predict_dominant_component()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.reconstruct_data"><code class="docutils literal notranslate"><span class="pre">AppBackend.reconstruct_data()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.remove_loadings"><code class="docutils literal notranslate"><span class="pre">AppBackend.remove_loadings()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.AppBackend.user_session_parameters"><code class="docutils literal notranslate"><span class="pre">AppBackend.user_session_parameters</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.process_and_cache_data"><code class="docutils literal notranslate"><span class="pre">process_and_cache_data()</span></code></a></li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-lse.libs.backend.data_models">lse.libs.backend.data_models module</a><ul>

@@ -273,16 +273,346 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="lse-libs-backend-io-package">
-<h1>lse.libs.backend.io package<a class="headerlink" href="#lse-libs-backend-io-package" title="Link to this heading">¶</a></h1>
+          <section id="module-lse.libs.backend.io">
+<span id="lse-libs-backend-io-package"></span><h1>lse.libs.backend.io package<a class="headerlink" href="#module-lse.libs.backend.io" title="Link to this heading">¶</a></h1>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OfflineUserSession">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.</span></span><span class="sig-name descname"><span class="pre">OfflineUserSession</span></span><a class="headerlink" href="#lse.libs.backend.io.OfflineUserSession" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession" title="lse.libs.backend.io.data_models.UserSession"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserSession</span></code></a></p>
+<p>A class to store offline usersession data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_wrapper</span> <span class="pre">(lse.libs.backend.io._offline.OfflineDataWrapper)</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OfflineUserSession.data_wrapper">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_wrapper</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">OfflineDataWrapper</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.OfflineUserSession.data_wrapper" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OfflineUserSession.model_post_init">
+<span class="sig-name descname"><span class="pre">model_post_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lse.libs.backend.io.OfflineUserSession.model_post_init" title="Link to this definition">¶</a></dt>
+<dd><p>We need to both initialize private attributes and call the user-defined model_post_init
+method.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OfflineUserSession.anomaly_quantifier">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anomaly_quantifier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GaussianAnomalyQuantifier</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lse.libs.backend.io.OfflineUserSession.anomaly_quantifier" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OfflineUserSession.data_infilter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_infilter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Index</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lse.libs.backend.io.OfflineUserSession.data_infilter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OfflineUserSession.features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.OfflineUserSession.features" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OfflineUserSession.models">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">models</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">ModelType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">PCALatentSpace</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">TSNELatentSpace</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.OfflineUserSession.models" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.</span></span><span class="sig-name descname"><span class="pre">OnlineUserSession</span></span><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession" title="lse.libs.backend.io.data_models.UserSession"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserSession</span></code></a></p>
+<p>A class to store and retrieve user session data in/from a Redis Database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_wrapper</span> <span class="pre">(lse.libs.backend.io._online.OnlineDataWrapper)</span></code></p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">key_manager</span> <span class="pre">(dict[lse.libs.backend.io.data_models.RedisKeyType,</span> <span class="pre">lse.libs.backend.io._online.RedisKeyManager])</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.data_wrapper">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_wrapper</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">OnlineDataWrapper</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.data_wrapper" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.key_manager">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">key_manager</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyType" title="lse.libs.backend.io.data_models.RedisKeyType"><span class="pre">RedisKeyType</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">RedisKeyManager</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.key_manager" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.model_post_init">
+<span class="sig-name descname"><span class="pre">model_post_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.model_post_init" title="Link to this definition">¶</a></dt>
+<dd><p>We need to both initialize private attributes and call the user-defined model_post_init
+method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyGroupType" title="lse.libs.backend.io.data_models.RedisKeyGroupType"><span class="pre">RedisKeyGroupType</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.reset" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.anomaly_quantifier">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anomaly_quantifier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GaussianAnomalyQuantifier</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.anomaly_quantifier" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.data_infilter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_infilter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Index</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.data_infilter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.features" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.OnlineUserSession.models">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">models</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">ModelType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">PCALatentSpace</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">TSNELatentSpace</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.OnlineUserSession.models" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lse.libs.backend.io.process_and_cache_data">
+<span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.</span></span><span class="sig-name descname"><span class="pre">process_and_cache_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lse.libs.backend.io.process_and_cache_data" title="Link to this definition">¶</a></dt>
+<dd><p>Processes and cache the data.</p>
+</dd></dl>
+
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 </section>
-<section id="lse-libs-backend-io-data-models-module">
-<h2>lse.libs.backend.io.data_models module<a class="headerlink" href="#lse-libs-backend-io-data-models-module" title="Link to this heading">¶</a></h2>
+<section id="module-lse.libs.backend.io.data_models">
+<span id="lse-libs-backend-io-data-models-module"></span><h2>lse.libs.backend.io.data_models module<a class="headerlink" href="#module-lse.libs.backend.io.data_models" title="Link to this heading">¶</a></h2>
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.DataWrapper">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.data_models.</span></span><span class="sig-name descname"><span class="pre">DataWrapper</span></span><a class="headerlink" href="#lse.libs.backend.io.data_models.DataWrapper" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="lse.libs.html#lse.libs.data_models.BaseModel" title="lse.libs.data_models.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.DataWrapper.data">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.DataWrapper.data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.DataWrapper.identifiers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identifiers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.DataWrapper.identifiers" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.DataWrapper.identifiers_dtypes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identifiers_dtypes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.DataWrapper.identifiers_dtypes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.DataWrapper.numerical_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numerical_features</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.DataWrapper.numerical_features" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.DataWrapper.numerical_identifiers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numerical_identifiers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.DataWrapper.numerical_identifiers" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyGroupType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.data_models.</span></span><span class="sig-name descname"><span class="pre">RedisKeyGroupType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyGroupType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyGroupType.DATA">
+<span class="sig-name descname"><span class="pre">DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'data'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyGroupType.DATA" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyGroupType.USER">
+<span class="sig-name descname"><span class="pre">USER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'user'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyGroupType.USER" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.data_models.</span></span><span class="sig-name descname"><span class="pre">RedisKeyType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyType.ANOMALY_QUANTIFIER">
+<span class="sig-name descname"><span class="pre">ANOMALY_QUANTIFIER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'anomaly_quantifier'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyType.ANOMALY_QUANTIFIER" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyType.DATA_INFILTER">
+<span class="sig-name descname"><span class="pre">DATA_INFILTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'data_infilter'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyType.DATA_INFILTER" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyType.FEATURES">
+<span class="sig-name descname"><span class="pre">FEATURES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'features'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyType.FEATURES" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.RedisKeyType.LATENT_MODELS">
+<span class="sig-name descname"><span class="pre">LATENT_MODELS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'latent_models'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.RedisKeyType.LATENT_MODELS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.Session">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.data_models.</span></span><span class="sig-name descname"><span class="pre">Session</span></span><a class="headerlink" href="#lse.libs.backend.io.data_models.Session" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="lse.libs.html#lse.libs.data_models.BaseModel" title="lse.libs.data_models.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#lse.libs.backend.io.data_models.Session.session_id" title="lse.libs.backend.io.data_models.Session.session_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">session_id</span> <span class="pre">(str)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.Session.session_id">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">session_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.Session.session_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.SessionType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.data_models.</span></span><span class="sig-name descname"><span class="pre">SessionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.backend.io.data_models.SessionType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.SessionType.OFFLINE">
+<span class="sig-name descname"><span class="pre">OFFLINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'offline'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.SessionType.OFFLINE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.SessionType.ONLINE">
+<span class="sig-name descname"><span class="pre">ONLINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'online'</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.SessionType.ONLINE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.data_models.</span></span><span class="sig-name descname"><span class="pre">UserSession</span></span><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lse.libs.backend.io.data_models.Session" title="lse.libs.backend.io.data_models.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.data_wrapper" title="lse.libs.backend.io.data_models.UserSession.data_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_wrapper</span> <span class="pre">(DataWrapper)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.data_wrapper">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_wrapper</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#lse.libs.backend.io.data_models.DataWrapper" title="lse.libs.backend.io.data_models.DataWrapper"><span class="pre">DataWrapper</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.data_wrapper" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.model_post_init">
+<span class="sig-name descname"><span class="pre">model_post_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.model_post_init" title="Link to this definition">¶</a></dt>
+<dd><p>This function is meant to behave like a BaseModel method to initialise private attributes.</p>
+<p>It takes context as an argument since that’s what pydantic-core passes when calling it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – The BaseModel instance.</p></li>
+<li><p><strong>context</strong> – The context.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.anomaly_quantifier">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anomaly_quantifier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GaussianAnomalyQuantifier</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.anomaly_quantifier" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.data_infilter">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_infilter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Index</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.data_infilter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.features">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.features" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.filtered_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filtered_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.filtered_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.models">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">models</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">ModelType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">PCALatentSpace</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">TSNELatentSpace</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.models" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.n_samples">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_samples</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.n_samples" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSession.pca_data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pca_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSession.pca_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSessionParameters">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.data_models.</span></span><span class="sig-name descname"><span class="pre">UserSessionParameters</span></span><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSessionParameters" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="lse.libs.html#lse.libs.data_models.BaseModel" title="lse.libs.data_models.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.anomaly_quantifier" title="lse.libs.backend.io.data_models.UserSessionParameters.anomaly_quantifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">anomaly_quantifier</span> <span class="pre">(mltoolbox.anomaly_detection._anomaly_detection.GaussianAnomalyQuantifier)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.data_infilter" title="lse.libs.backend.io.data_models.UserSessionParameters.data_infilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_infilter</span> <span class="pre">(pandas.core.indexes.base.Index)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.features" title="lse.libs.backend.io.data_models.UserSessionParameters.features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">features</span> <span class="pre">(list[str])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.latent_models" title="lse.libs.backend.io.data_models.UserSessionParameters.latent_models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">latent_models</span> <span class="pre">(dict[mltoolbox.latent_space._latent_space.ModelType,</span> <span class="pre">mltoolbox.latent_space._latent_space.PCALatentSpace</span> <span class="pre">|</span> <span class="pre">mltoolbox.latent_space._latent_space.TSNELatentSpace])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSessionParameters.anomaly_quantifier">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anomaly_quantifier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GaussianAnomalyQuantifier</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSessionParameters.anomaly_quantifier" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSessionParameters.data_infilter">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_infilter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pd.Index</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSessionParameters.data_infilter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSessionParameters.features">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSessionParameters.features" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="lse.libs.backend.io.data_models.UserSessionParameters.latent_models">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latent_models</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">LatentModelType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">PCALatentSpace</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">TSNELatentSpace</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#lse.libs.backend.io.data_models.UserSessionParameters.latent_models" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="lse-libs-backend-io-utils-module">
-<h2>lse.libs.backend.io.utils module<a class="headerlink" href="#lse-libs-backend-io-utils-module" title="Link to this heading">¶</a></h2>
+<section id="module-lse.libs.backend.io.utils">
+<span id="lse-libs-backend-io-utils-module"></span><h2>lse.libs.backend.io.utils module<a class="headerlink" href="#module-lse.libs.backend.io.utils" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="lse.libs.backend.io.utils.read_feathered_dataframe">
+<span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.utils.</span></span><span class="sig-name descname"><span class="pre">read_feathered_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BytesIO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#lse.libs.backend.io.utils.read_feathered_dataframe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lse.libs.backend.io.utils.serialize_to_feather">
+<span class="sig-prename descclassname"><span class="pre">lse.libs.backend.io.utils.</span></span><span class="sig-name descname"><span class="pre">serialize_to_feather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">BytesIO</span></span></span><a class="headerlink" href="#lse.libs.backend.io.utils.serialize_to_feather" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
 </section>
 
@@ -342,9 +672,84 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">lse.libs.backend.io package</a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.OfflineUserSession"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.OfflineUserSession.data_wrapper"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.data_wrapper</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OfflineUserSession.model_post_init"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.model_post_init()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OfflineUserSession.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.anomaly_quantifier</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OfflineUserSession.data_infilter"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.data_infilter</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OfflineUserSession.features"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.features</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OfflineUserSession.models"><code class="docutils literal notranslate"><span class="pre">OfflineUserSession.models</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.data_wrapper"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.data_wrapper</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.key_manager"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.key_manager</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.model_post_init"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.model_post_init()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.reset"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.reset()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.anomaly_quantifier</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.data_infilter"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.data_infilter</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.features"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.features</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.OnlineUserSession.models"><code class="docutils literal notranslate"><span class="pre">OnlineUserSession.models</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.process_and_cache_data"><code class="docutils literal notranslate"><span class="pre">process_and_cache_data()</span></code></a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#lse-libs-backend-io-data-models-module">lse.libs.backend.io.data_models module</a></li>
-<li><a class="reference internal" href="#lse-libs-backend-io-utils-module">lse.libs.backend.io.utils module</a></li>
+<li><a class="reference internal" href="#module-lse.libs.backend.io.data_models">lse.libs.backend.io.data_models module</a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.DataWrapper"><code class="docutils literal notranslate"><span class="pre">DataWrapper</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.DataWrapper.data"><code class="docutils literal notranslate"><span class="pre">DataWrapper.data</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.DataWrapper.identifiers"><code class="docutils literal notranslate"><span class="pre">DataWrapper.identifiers</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.DataWrapper.identifiers_dtypes"><code class="docutils literal notranslate"><span class="pre">DataWrapper.identifiers_dtypes</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.DataWrapper.numerical_features"><code class="docutils literal notranslate"><span class="pre">DataWrapper.numerical_features</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.DataWrapper.numerical_identifiers"><code class="docutils literal notranslate"><span class="pre">DataWrapper.numerical_identifiers</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyGroupType"><code class="docutils literal notranslate"><span class="pre">RedisKeyGroupType</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyGroupType.DATA"><code class="docutils literal notranslate"><span class="pre">RedisKeyGroupType.DATA</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyGroupType.USER"><code class="docutils literal notranslate"><span class="pre">RedisKeyGroupType.USER</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyType"><code class="docutils literal notranslate"><span class="pre">RedisKeyType</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyType.ANOMALY_QUANTIFIER"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.ANOMALY_QUANTIFIER</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyType.DATA_INFILTER"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.DATA_INFILTER</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyType.FEATURES"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.FEATURES</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.RedisKeyType.LATENT_MODELS"><code class="docutils literal notranslate"><span class="pre">RedisKeyType.LATENT_MODELS</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.Session"><code class="docutils literal notranslate"><span class="pre">Session</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.Session.session_id"><code class="docutils literal notranslate"><span class="pre">Session.session_id</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.SessionType"><code class="docutils literal notranslate"><span class="pre">SessionType</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.SessionType.OFFLINE"><code class="docutils literal notranslate"><span class="pre">SessionType.OFFLINE</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.SessionType.ONLINE"><code class="docutils literal notranslate"><span class="pre">SessionType.ONLINE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession"><code class="docutils literal notranslate"><span class="pre">UserSession</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.data_wrapper"><code class="docutils literal notranslate"><span class="pre">UserSession.data_wrapper</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.model_post_init"><code class="docutils literal notranslate"><span class="pre">UserSession.model_post_init()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">UserSession.anomaly_quantifier</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.data_infilter"><code class="docutils literal notranslate"><span class="pre">UserSession.data_infilter</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.features"><code class="docutils literal notranslate"><span class="pre">UserSession.features</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.filtered_data"><code class="docutils literal notranslate"><span class="pre">UserSession.filtered_data</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.models"><code class="docutils literal notranslate"><span class="pre">UserSession.models</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.n_samples"><code class="docutils literal notranslate"><span class="pre">UserSession.n_samples</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSession.pca_data"><code class="docutils literal notranslate"><span class="pre">UserSession.pca_data</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.anomaly_quantifier"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.anomaly_quantifier</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.data_infilter"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.data_infilter</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.features"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.features</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.data_models.UserSessionParameters.latent_models"><code class="docutils literal notranslate"><span class="pre">UserSessionParameters.latent_models</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-lse.libs.backend.io.utils">lse.libs.backend.io.utils module</a><ul>
+<li><a class="reference internal" href="#lse.libs.backend.io.utils.read_feathered_dataframe"><code class="docutils literal notranslate"><span class="pre">read_feathered_dataframe()</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.backend.io.utils.serialize_to_feather"><code class="docutils literal notranslate"><span class="pre">serialize_to_feather()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
