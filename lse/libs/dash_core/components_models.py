@@ -36,6 +36,7 @@ class StatusComponent(str, _Component):
 
 class CheckpointComponent(str, _Component):
     DATA = "data"
+    NUMERIC_FEATURES = "numeric-features"
     PCA_MODEL = "pca-model"
     LATENT_MODEL = "latent-model"
     ANOMALY_MODEL = "anomaly-model"

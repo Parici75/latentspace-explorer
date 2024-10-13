@@ -1,3 +1,4 @@
+import logging
 from typing import Any
 
 import dash
@@ -21,6 +22,8 @@ from lse.libs.dash_core.components_models import (
 )
 from lse.libs.utils.data_loading import parse_spreadsheet_contents
 from lse.libs.utils.data_table_formatting import DataTableFormatter
+
+logger = logging.getLogger()
 
 
 def add_callbacks(  # noqa: C901
@@ -51,9 +54,6 @@ def add_callbacks(  # noqa: C901
                         ]
                     ),
                 )
-                app_backend = load_online_session(session_id=session_id)
-                # Reset data filter
-                app_backend.user_session.data_infilter = None
 
                 return (
                     True,
@@ -76,14 +76,12 @@ def add_callbacks(  # noqa: C901
                     session_id=session_id,
                     data=data,
                 )
-                app_backend = load_online_session(session_id=session_id)
-                # Reset data filter
-                app_backend.user_session.data_infilter = None
                 return True
             else:
                 raise PreventUpdate
 
     @app.callback(
+        Output(CheckpointComponent.NUMERIC_FEATURES, "data"),
         Output(ComputeComponent.RUN_MODEL_PIPELINE, "disabled"),
         Output(StatusComponent.LOADING_STATUS, "children", allow_duplicate=True),
         Output(PlotAreaComponent.DATA_PROJECTION, "selectedData"),
@@ -92,13 +90,25 @@ def add_callbacks(  # noqa: C901
         Output(CheckpointComponent.ANOMALY_MODEL, "data", allow_duplicate=True),
         Output(CheckpointComponent.FILTERED_DATA, "data", allow_duplicate=True),
         Input(CheckpointComponent.DATA, "data"),
+        State(SessionComponent.SESSION_ID, "data"),
         prevent_initial_call=True,
     )
     def update_loading_status_and_workflow(
         data_checkpoint: bool,
-    ) -> tuple[bool, str, None, bool, bool, bool, bool]:
+        session_id: str,
+    ) -> tuple[bool, bool, str, None, bool, bool, bool, bool]:
         if data_checkpoint:
-            return (False, "Data loaded!", None) + (False,) * 4
+            try:
+                load_online_session(session_id)
+            except Exception as exc:
+                logger.error(exc)
+                message = str(exc)
+                features_checkpoint = False
+            else:
+                message = "Data loaded!"
+                features_checkpoint = True
+
+            return (features_checkpoint, False, message, None) + (False,) * 4
 
         raise PreventUpdate
 
@@ -108,7 +118,7 @@ def add_callbacks(  # noqa: C901
         Output(OutputComponent.PREVIEW_DATA_TABLE, "columns"),
         Output(OutputComponent.PREVIEW_DATA_TABLE, "hidden_columns"),
         Output(OutputComponent.PREVIEW_DATA_TABLE, "style_data_conditional"),
-        Input(CheckpointComponent.DATA, "data"),
+        Input(CheckpointComponent.NUMERIC_FEATURES, "data"),
         Input(CheckpointComponent.FILTERED_DATA, "data"),
         Input(PlotAreaComponent.DATA_PROJECTION, "selectedData"),
         State(SessionComponent.SESSION_ID, "data"),
@@ -119,7 +129,7 @@ def add_callbacks(  # noqa: C901
         filtered_data_checkpoint: bool,
         selected_data: dict[str, Any] | None,
         session_id: str,
-    ) -> tuple[dict[str, Any], list[dict[str, Any]], list[str], list[dict[str, Any]]]:
+    ) -> tuple[dict[str, Any] | None, list[dict[str, Any]], list[str], list[dict[str, Any]]]:
 
         if data_checkpoint:
             app_backend = load_online_session(session_id)
@@ -148,4 +158,5 @@ def add_callbacks(  # noqa: C901
                 ),
                 styles,
             )
-        raise PreventUpdate
+
+        return (None, [], [], [])

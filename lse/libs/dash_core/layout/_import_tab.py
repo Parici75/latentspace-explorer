@@ -70,7 +70,8 @@ def build_tab(dashboard_title: str, enable_data_upload: bool) -> dcc.Tab:
                                         value=[],
                                         multi=True,
                                         disabled=False,
-                                    )
+                                    ),
+                                    dcc.Store(id=cm.CheckpointComponent.NUMERIC_FEATURES),
                                 ],
                                 className="selector",
                             ),

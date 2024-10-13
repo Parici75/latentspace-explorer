@@ -25,7 +25,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
     @app.callback(
         Output(DropdownComponent.FEATURES, "options"),
         Output(DropdownComponent.FEATURES, "value"),
-        Input(CheckpointComponent.DATA, "data"),
+        Input(CheckpointComponent.NUMERIC_FEATURES, "data"),
         State(SessionComponent.SESSION_ID, "data"),
         prevent_initial_call=True,
     )
@@ -38,7 +38,8 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
                 [{"label": var, "value": var} for var in app_backend.user_session.features],
                 app_backend.user_session.features,
             )
-        raise PreventUpdate
+
+        return [], []
 
     @app.callback(
         Output(DropdownComponent.PC_SELECTOR, "options"),
@@ -130,10 +131,8 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
                         option["value"] for option in signature_options[:N_DISPLAYED_FEATURES]
                     ]
 
-                return (
-                    signature_options,
-                    signature_preselection,
-                )
+                return signature_options, signature_preselection
+
         raise PreventUpdate
 
     ## Selector callback
