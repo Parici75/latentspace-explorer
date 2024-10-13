@@ -246,7 +246,7 @@ def build_tab() -> dcc.Tab:
                                                         [
                                                             html.P("Perplexity"),
                                                             dcc.Slider(
-                                                                id=cm.PlotControlComponent.PERPLEXITY_SLIDER,
+                                                                id=cm.PlotControlComponent.PERPLEXITY,
                                                                 updatemode=("mouseup"),
                                                                 min=5,
                                                                 max=50,
@@ -493,7 +493,7 @@ def build_tab() -> dcc.Tab:
                                                                     [
                                                                         ("Variance" " to retain"),
                                                                         dcc.Slider(
-                                                                            id=cm.PlotControlComponent.VARIANCE_SLIDER,
+                                                                            id=cm.PlotControlComponent.VARIANCE_FILTER,
                                                                             updatemode="mouseup",
                                                                             min=0,
                                                                             max=1,

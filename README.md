@@ -34,9 +34,9 @@ Features and workflow example can be found in the [documentation](https://parici
 
 Getting started with `latentspace-explorer` on your data
 -
-Dash being [stateless](https://dash.plotly.com/sharing-data-between-callbacks), `latentspace-explorer` uses [Redis](https://redis.io/solutions/caching/) as a caching backend.
+Dash being [stateless](https://dash.plotly.com/sharing-data-between-callbacks), `latentspace-explorer` uses [Redis](https://redis.io/solutions/caching/) as a caching backend to persist user's data across callbacks.
 
-To start a Redis database locally in a Docker container, run:
+To start a `Redis` database locally in a Docker container, run:
 
 ```bash
 make start-redis
@@ -72,7 +72,7 @@ To build and run the application locally, clone the repository and run:
 make run-app
 ```
 
-This target builds a `latentspaceexplorer-app` docker image, pulls a `Redis` image and start the containers on `localhost` via docker-compose.
+This target builds a `latentspaceexplorer-app` docker image, pulls a `Redis` image and start the containers on `localhost` via `docker-compose`.
 
 The app will be accessible at `http://localhost:8050/`
 
@@ -81,8 +81,8 @@ Spreadsheets of data can be loaded via the `Ìmport` section.
 
 ### Pushing to production
 Pushing the app to production requires the following three steps:
-1. Setting up a production Redis cache database.
-2. Building and pushing a production Docker image to a docker/artifact registry. Refer to the `push-prod-container` target of the `makefile` to accomplish that.
+1. Setting up a production `Redis` cache database.
+2. Building and pushing a production `Docker` image to a docker/artifact registry. Refer to the `push-prod-container` target of the `makefile` to accomplish that.
 3. Pulling the image and starting a container on a virtual machine or a serverless solution.
 
 
@@ -113,8 +113,8 @@ Requirements
 Extending the project
 -
 Adapting this toolbox to a specific use case typically involves:
-- setting up a proper data ingestion module to interface with the data source.
-- writing the data preprocessing module that prepare the data to be analysed.
+- Setting up a proper data ingestion module to interface with the data source.
+- Writing the data preprocessing module that prepare the data to be analysed.
 
 [Here](https://benjaminroland.onrender.com/work/interactive-anomaly-detector-and-scorer) is an example of how one can use the core functionalities of this toolbox to tackle real-world customer issues.
 
@@ -122,7 +122,7 @@ Adapting this toolbox to a specific use case typically involves:
 Limitations
 -
 ### Working with big data
-`latentspace-explorer` does not work with big data, that is, the full dataset needs to fit on the RAM of the machine executing the application.
+`latentspace-explorer` does not work with big data: the full dataset needs to fit on the RAM of the machine executing the application.
 
 ### Number of points rendered
 By default, the number of points displayed is limited to avoid cluttering the UI. Beyond this limit, the most "abnormal" data points (i.e. with the highest negative log-probabilities) are filtered out automatically.

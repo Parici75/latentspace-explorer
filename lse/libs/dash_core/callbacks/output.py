@@ -51,7 +51,7 @@ def add_callbacks(  # noqa: C901
         Input(CheckpointComponent.FILTERED_DATA, "data"),
         Input(PlotAreaComponent.DATA_PROJECTION, "selectedData"),
         Input(DropdownComponent.SIGNATURE, "value"),
-        Input(PlotControlComponent.VARIANCE_SLIDER, "value"),
+        Input(PlotControlComponent.VARIANCE_FILTER, "value"),
         State(SessionComponent.SESSION_ID, "data"),
         prevent_initial_call=True,
     )

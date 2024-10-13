@@ -11,10 +11,13 @@ class _Component(Enum):
         return "-".join([self.value, "container"])
 
 
-class ComputeComponent(str, _Component):
-    RUN_MODEL_PIPELINE = "run-model-pipeline"
+class DataLoadingComponent(str, _Component):
     LOAD_DATA = "load-data"
     UPLOAD_DATA = "upload-data"
+
+
+class ComputeComponent(str, _Component):
+    RUN_MODEL_PIPELINE = "run-model-pipeline"
     STANDARDIZE = "standardize-checker"
     INITIAL_GAUSSIAN_MIXTURE_GUESS = "initial-gaussian-mixture-guess"
 
@@ -40,16 +43,16 @@ class CheckpointComponent(str, _Component):
 
 
 class PlotControlComponent(str, _Component):
-    VARIANCE_SLIDER = "variance-slider"
+    VARIANCE_FILTER = "variance-filter"
     PROBA_FILTER = "proba-filter"
     RANDOM_SAMPLE = "random-sample"
     RANDOM_SAMPLE_SIZE = "random-sample-size"
     RESET_SAMPLE = "reset-sample"
     LOADINGS_CHECKER = "loadings-checker"
     LATENT_SPACE_PLOT = "latent-space-plot"
-    PERPLEXITY_SLIDER = "perplexity-slider"
+    PERPLEXITY = "perplexity"
     CLUSTERIZE_RADIO_BUTTON = "clusterize-radio-button"
-    RESET_SIGNATURE = "reset-signature"
+    RESET_SIGNATURE = "reset-signatu<re"
     GET_FULL_SIGNATURE = "get-full-signature"
     GET_FULL_COMPONENTS = "get-full-components"
     RESET_COMPONENTS = "reset-components"

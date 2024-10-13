@@ -35,8 +35,8 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901, PLR0915
 
     # PC variance
     @app.callback(
-        Output(PlotControlComponent.VARIANCE_SLIDER, "min"),
-        Output(PlotControlComponent.VARIANCE_SLIDER, "marks"),
+        Output(PlotControlComponent.VARIANCE_FILTER, "min"),
+        Output(PlotControlComponent.VARIANCE_FILTER, "marks"),
         Output(PlotAreaComponent.LOADINGS_PLOT, "figure"),
         Input(CheckpointComponent.PCA_MODEL, "data"),
         Input(DropdownComponent.PC_SELECTOR, "value"),
@@ -217,7 +217,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901, PLR0915
         Input(CheckpointComponent.PCA_MODEL, "data"),
         Input(PlotAreaComponent.DATA_PROJECTION, "hoverData"),
         Input(DropdownComponent.SIGNATURE, "value"),
-        Input(PlotControlComponent.VARIANCE_SLIDER, "value"),
+        Input(PlotControlComponent.VARIANCE_FILTER, "value"),
         State(SessionComponent.SESSION_ID, "data"),
         prevent_initial_call=True,
     )
@@ -267,7 +267,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901, PLR0915
         Input(PlotAreaComponent.DATA_PROJECTION, "selectedData"),
         Input(PlotControlComponent.PLOT_TYPE, "value"),
         Input(DropdownComponent.SIGNATURE, "value"),
-        Input(PlotControlComponent.VARIANCE_SLIDER, "value"),
+        Input(PlotControlComponent.VARIANCE_FILTER, "value"),
         Input(DropdownComponent.DATA_SLICER, "value"),
         Input(DropdownComponent.SIZE_CODE, "value"),
         Input(DropdownComponent.COLOR_CODE, "value"),

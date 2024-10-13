@@ -13,6 +13,7 @@ from lse.libs.dash_core.callbacks.utils import (
 from lse.libs.dash_core.components_models import (
     CheckpointComponent,
     ComputeComponent,
+    DataLoadingComponent,
     OutputComponent,
     PlotAreaComponent,
     SessionComponent,
@@ -31,9 +32,9 @@ def add_callbacks(  # noqa: C901
 
         @app.callback(
             Output(CheckpointComponent.DATA, "data"),
-            Output(ComputeComponent.UPLOAD_DATA, "contents"),
-            Input(ComputeComponent.UPLOAD_DATA, "contents"),
-            State(ComputeComponent.UPLOAD_DATA, "filename"),
+            Output(DataLoadingComponent.UPLOAD_DATA, "contents"),
+            Input(DataLoadingComponent.UPLOAD_DATA, "contents"),
+            State(DataLoadingComponent.UPLOAD_DATA, "filename"),
             State(SessionComponent.SESSION_ID, "data"),
             prevent_initial_call=True,
         )
@@ -65,7 +66,7 @@ def add_callbacks(  # noqa: C901
 
         @app.callback(
             Output(CheckpointComponent.DATA, "data"),
-            Input(ComputeComponent.LOAD_DATA, "n_clicks"),
+            Input(DataLoadingComponent.LOAD_DATA, "n_clicks"),
             State(SessionComponent.SESSION_ID, "data"),
             prevent_initial_call=True,
         )

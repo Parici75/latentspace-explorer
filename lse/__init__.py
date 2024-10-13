@@ -7,7 +7,7 @@ This package is organized as follows:
     The source code for the layout, callback, and backend logics.
 
 - utils:
-    Utility modules for database, caching, and application set up.
+    Utility modules for database, cache, and application set up.
 
 - app_builder:
     The entrypoint for building the Dash webapp.

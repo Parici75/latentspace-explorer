@@ -7,7 +7,7 @@ from lse.libs.dash_core import components_models as cm
 def _build_data_loading_div(enable_data_upload: bool) -> html:
     if enable_data_upload:
         return dcc.Upload(
-            id=cm.ComputeComponent.UPLOAD_DATA,
+            id=cm.DataLoadingComponent.UPLOAD_DATA,
             children=html.Div(
                 [
                     "Drag and Drop or ",
@@ -29,9 +29,9 @@ def _build_data_loading_div(enable_data_upload: bool) -> html:
         )
 
     return html.Button(
-        id=cm.ComputeComponent.LOAD_DATA,
+        id=cm.DataLoadingComponent.LOAD_DATA,
         n_clicks=0,
-        children=cm.ComputeComponent.LOAD_DATA.child,
+        children=cm.DataLoadingComponent.LOAD_DATA.child,
         className="button",
     )
 

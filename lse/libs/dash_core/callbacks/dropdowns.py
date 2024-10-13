@@ -235,7 +235,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
 
     # Plotting options
     @app.callback(
-        Output(PlotControlComponent.PERPLEXITY_SLIDER, "disabled"),
+        Output(PlotControlComponent.PERPLEXITY, "disabled"),
         Output(PlotControlComponent.LOADINGS_CHECKER, "options"),
         Input(PlotControlComponent.LATENT_SPACE_PLOT, "value"),
         State(PlotControlComponent.LOADINGS_CHECKER, "options"),

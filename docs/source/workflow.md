@@ -4,8 +4,8 @@ A typical workflow runs as follow :
 
 1. **Load** the data to be explore
     Data must be supplied :
-    - to the :class:`LatentSpaceInterface` class in the form of a *n_observations x n_variables* :obj:`pandas.DataFrame`.
-    - as a CSV file via the app file loader interface.
+    - To the :class:`~lse.LatentSpaceInterface` class in the form of a *n_observations x n_variables* :obj:`pandas.DataFrame`.
+    - As CSV file(s) via the :obj:`~lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA` interface.
 
     🎉 Calendar features are automatically extracted from :obj:`pandas.DatetimeIndex`.
 
@@ -23,6 +23,7 @@ A typical workflow runs as follow :
 
     The probability of each data point under the gaussian mixture model is computed.
 
+
 4. **Explore** data :
     - Select the low-dimensional plot to display.
 
@@ -30,6 +31,6 @@ A typical workflow runs as follow :
 
 
 5. **Export** the data :
-    The `Export` section let you export the matrix of reconstructed data as a CSV file.
-
-    A pickled :obj:`AppBackend` object exposing the data and the processing and plotting methods can be retrieved.
+    The `Export` section let you export:
+    - The matrix of reconstructed data as a CSV file
+    - A pickled :class:`~lse.libs.backend.AppBackend` object exposing the data, processing and plotting methods to be used offline.

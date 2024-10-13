@@ -1,4 +1,4 @@
-**[`Latentspace-explorer`](https://github.com/Parici75/latentspace-explorer)** is a toolbox based on [Dash](https://plotly.com/dash/) that let you easily dive into multivariate data.
+**[`Latentspace-explorer`](https://github.com/Parici75/latentspace-explorer)** is a data analysis toolbox based on [Dash](https://plotly.com/dash/) that let you easily dive into multivariate data.
 
 The library was designed as a user-friendly tool for carrying out interactive exploratory data analysis of multidimensional dataset.
 

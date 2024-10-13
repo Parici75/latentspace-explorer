@@ -75,7 +75,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901
         Output(PlotControlComponent.PROBA_FILTER, "value", allow_duplicate=True),
         Input(ComputeComponent.RUN_MODEL_PIPELINE, "n_clicks"),
         State(ComputeComponent.INITIAL_GAUSSIAN_MIXTURE_GUESS, "value"),
-        State(PlotControlComponent.VARIANCE_SLIDER, "value"),
+        State(PlotControlComponent.VARIANCE_FILTER, "value"),
         State(ComputeComponent.STANDARDIZE, "value"),
         State(DropdownComponent.FEATURES, "value"),
         State(PlotAreaComponent.DATA_PROJECTION, "selectedData"),
@@ -146,7 +146,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901
         Output(ExportComponent.PREPARE_EXPORT_LATENT_SPACE_MODEL, "disabled"),
         Input(CheckpointComponent.PCA_MODEL, "data"),
         Input(DropdownComponent.PC_SELECTOR, "value"),
-        Input(PlotControlComponent.PERPLEXITY_SLIDER, "value"),
+        Input(PlotControlComponent.PERPLEXITY, "value"),
         State(SessionComponent.SESSION_ID, "data"),
         prevent_initial_call=True,
     )
@@ -176,7 +176,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901
         Output(CheckpointComponent.ANOMALY_MODEL, "data"),
         Input(CheckpointComponent.LATENT_MODEL, "data"),
         Input(InputComponent.N_GAUSSIAN_KERNELS, "value"),
-        Input(PlotControlComponent.VARIANCE_SLIDER, "value"),
+        Input(PlotControlComponent.VARIANCE_FILTER, "value"),
         State(SessionComponent.SESSION_ID, "data"),
         prevent_initial_call=True,
     )
