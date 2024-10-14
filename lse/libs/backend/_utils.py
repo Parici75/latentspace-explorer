@@ -7,7 +7,7 @@ from lse.libs.data_models import VariableReference
 
 
 def add_customdata(fig: go.Figure, plot_data: pd.DataFrame, slicer: str) -> go.Figure:
-    """Adds :obj:`VariableReference.UNIQUE_ID` to the `customdata` field of Plotly Traces."""
+    """Adds {obj}`VariableReference.UNIQUE_ID` to the `customdata` field of Plotly Traces."""
     for level in plot_data[slicer].unique():
         fig.for_each_trace(
             lambda trace, level=level: (

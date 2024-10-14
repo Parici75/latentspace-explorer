@@ -23,7 +23,7 @@ def _format_index(df: pd.DataFrame) -> pd.DataFrame:
         df = extract_calendar_features(df)
     except TypeError:
         # No datetimeindex available
-        logger.debug(f"No datetime features in the :obj:`pandas.DataFrame` index: {df.index}")
+        logger.debug(f"No datetime features in the `pandas.DataFrame` index: {df.index}")
 
     # Create a unique index
     df = df.assign(**{VariableReference.UNIQUE_ID: np.arange(len(df))})

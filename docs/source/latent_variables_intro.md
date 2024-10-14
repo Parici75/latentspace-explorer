@@ -31,8 +31,8 @@ As Data scientists / ML engineers, our job is to exploit these latent variables,
 
 References
 -
-[^1][Lecun, Y.; Bottou, L.; Bengio, Y.; Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE. 86 (11): 2278–2324](https://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)
+[^1]: [Lecun, Y.; Bottou, L.; Bengio, Y.; Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE. 86 (11): 2278–2324](https://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)
 
-[^2][BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
+[^2]: [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 
-[^3][Tutorial on Collaborative Filtering and Matrix Factorization in Python](https://lazyprogrammer.me/tutorial-on-collaborative-filtering-and-matrix-factorization-in-python/)
+[^3]: [Tutorial on Collaborative Filtering and Matrix Factorization in Python](https://lazyprogrammer.me/tutorial-on-collaborative-filtering-and-matrix-factorization-in-python/)

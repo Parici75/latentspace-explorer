@@ -79,12 +79,9 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "furo"
 html_favicon = "assets/favicon.ico"
 
-
-# html_theme_options = {
-#     "sidebar_hide_name": True,
-#     "light_logo": "statsplotly-light-mode-logo.png",
-#     "dark_logo": "statsplotly-dark-mode-logo.png",
-# }
+html_theme_options = {
+    "sidebar_hide_name": False,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

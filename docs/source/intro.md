@@ -4,4 +4,6 @@ The library was designed as a user-friendly tool for carrying out interactive ex
 
 Data exploration in Jupyter notebooks can be tedious and lead to a pile of endless variations of statistical visualization plots.
 
-latentspace-explorer combines dimensionality reduction, probability density estimation, and clustering techniques to enable deep exploration of multivariate datasets across different facets.
+`Latentspace-explorer` combines dimensionality reduction, probability density estimation, and clustering techniques to enable deep exploration of multivariate datasets across different facets.
+
+![latentspaceexplorer-demo](_static/latentspaceexplorer-demo.gif)

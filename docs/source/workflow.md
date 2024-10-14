@@ -4,10 +4,10 @@ A typical workflow runs as follow :
 
 1. **Load** the data to be explore
     Data must be supplied :
-    - To the :class:`~lse.LatentSpaceInterface` class in the form of a *n_observations x n_variables* :obj:`pandas.DataFrame`.
-    - As CSV file(s) via the :obj:`~lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA` interface.
+    - To the {class}`~lse.LatentSpaceInterface` class in the form of a *n_observations x n_variables* {obj}`pandas.DataFrame`.
+    - As CSV file(s) via the {obj}`~lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA` interface.
 
-    🎉 Calendar features are automatically extracted from :obj:`pandas.DatetimeIndex`.
+    🎉 Calendar features are automatically extracted from {obj}`pandas.DatetimeIndex`.
 
 
 2. **Select** the variables (a.k.a. features) to be included in the analysis. All numeric columns available in the DataFrame are preselected.
@@ -33,4 +33,4 @@ A typical workflow runs as follow :
 5. **Export** the data :
     The `Export` section let you export:
     - The matrix of reconstructed data as a CSV file
-    - A pickled :class:`~lse.libs.backend.AppBackend` object exposing the data, processing and plotting methods to be used offline.
+    - A pickled {class}`~lse.libs.backend.AppBackend` object exposing the data, processing and plotting methods to be used offline.

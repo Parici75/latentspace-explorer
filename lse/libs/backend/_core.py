@@ -219,7 +219,7 @@ class AppBackend(KMeansClassifier, GenericPlotter):
         """Computes the probability of the data in `self.user_session` under the generative model.
 
         Returns:
-            A :obj:`pandas.Series` of log probabilities.
+            A {obj}`pandas.Series` of log probabilities.
         """
         return self.user_session.anomaly_quantifier.score_samples(  # type: ignore
             self.user_session.pca_data
@@ -235,7 +235,7 @@ class AppBackend(KMeansClassifier, GenericPlotter):
                 A 2-values quantile array.
 
         Returns:
-            A tuple of (filtered :obj:`pandas.DataFrame` of datapoints with log_probabilities
+            A tuple of (filtered {obj}`pandas.DataFrame` of datapoints with log_probabilities
             comprised in quantile (log_probabilities, proba_threshold),
             quantile).
         """
@@ -261,7 +261,7 @@ class AppBackend(KMeansClassifier, GenericPlotter):
         """Returns the most likely gaussian the data belongs to.
 
         Returns:
-            A :obj:`pandas.Series` of prediction.
+            A {obj}`pandas.Series` of prediction.
         """
 
         predicted_components = self.user_session.anomaly_quantifier.predict_component(  # type: ignore
@@ -276,7 +276,7 @@ class AppBackend(KMeansClassifier, GenericPlotter):
         """Returns the density of each gaussian components for the data.
 
         Returns:
-            A :obj:`pandas.Series` of arrays.
+            A {obj}`pandas.Series` of arrays.
         """
 
         mixture_components = self.user_session.anomaly_quantifier.predict_components_proba(  # type: ignore
@@ -382,7 +382,7 @@ class AppBackend(KMeansClassifier, GenericPlotter):
         size_dimension: str | None,
         n_kmeans_clusters: int | None = None,
     ) -> tuple[pd.DataFrame, PlotCues]:
-        """Returns a :obj:`pandas.DataFrame` of the plotting data, along with a :obj:`PlotCues` object
+        """Returns a {obj}`pandas.DataFrame` of the plotting data, along with a {obj}`PlotCues` object
         specifying plot styling dimensions."""
 
         # Negative log-likelihood is more convenient for plotting

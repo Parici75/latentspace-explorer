@@ -15,28 +15,26 @@
 </div>
 
 ----------------
-[`latentspace-explorer`](https://github.com/Parici75/latentspace-explorer) is a toolbox based on [Dash](https://plotly.com/dash/) that let you easily dive into multivariate data.
+[`latentspace-explorer`](https://github.com/Parici75/latentspace-explorer) is a data analysis toolbox based on [Dash](https://plotly.com/dash/) that let you easily dive into multivariate data.
 
 
 ![latentspaceexplorer-demo](docs/assets/latentspaceexplorer-demo.gif)
 
 
-The library was designed as a user-friendly tool for carrying out interactive exploratory data analysis of multidimensional dataset.
-
 Data exploration in Jupyter notebooks can be tedious and lead to a pile of endless variations of statistical visualization plots.
 
-`latentspace-explorer` combines dimensionality reduction, probability density estimation, and clustering techniques to enable deep exploration of multivariate datasets across different facets.
+`latentspace-explorer` was designed as a user-friendly tool for carrying out interactive exploratory data analysis of multidimensional dataset. It combines dimensionality reduction, probability density estimation, and clustering techniques to enable deep exploration of multivariate datasets across different facets.
 
 Documentation
 -
-Features and workflow example can be found in the [documentation](https://parici75.github.io/latentspace-explorer).
+Features and workflow examples can be found in the [documentation](https://parici75.github.io/latentspace-explorer).
 
 
 Getting started with `latentspace-explorer` on your data
 -
 Dash being [stateless](https://dash.plotly.com/sharing-data-between-callbacks), `latentspace-explorer` uses [Redis](https://redis.io/solutions/caching/) as a caching backend to persist user's data across callbacks.
 
-To start a `Redis` database locally in a Docker container, run:
+To start a `Redis` database locally in a `Docker` container, run:
 
 ```bash
 make start-redis

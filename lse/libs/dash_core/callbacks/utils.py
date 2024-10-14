@@ -49,7 +49,7 @@ def update_data_cache(session_id: str, selected_data: dict[str, Any] | None) -> 
 def get_datapoints_from_selection_or_hover(
     data: pd.DataFrame, selected_data: dict[str, Any] | None
 ) -> pd.DataFrame | pd.Series:
-    """Selects data points through their :obj:`VariableReference.UNIQUE_ID` stored in Plotly Trace's `custom_data` field."""
+    """Selects data points through their {obj}`VariableReference.UNIQUE_ID` stored in Plotly Trace's `custom_data` field."""
 
     if selected_data is None:
         return data

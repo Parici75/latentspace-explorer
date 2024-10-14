@@ -9,7 +9,7 @@ class LatentSpaceInterface:
 
     Attributes:
         data:
-            A :obj:`pandas.DataFrame` to explore.
+            A {obj}`pandas.DataFrame` to explore.
         host:
             The address to expose the app on.
         port:

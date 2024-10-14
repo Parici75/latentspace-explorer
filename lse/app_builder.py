@@ -39,12 +39,12 @@ def build_dash_app(  # noqa: C901, PLR0915, PLR0912
         dashboard_title:
             A string used for title of the dashboard.
         data:
-            A :obj:`pandas.DataFrame` to explore.
+            A {obj}`pandas.DataFrame` to explore.
         disable_input_data_tables:
             If True, hides the input data table.
 
     Returns:
-        A :obj:`dash.Dash` application.
+        A {obj}`dash.Dash` application.
     """
     # App title
     dashboard_title = (
