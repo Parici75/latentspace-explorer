@@ -280,8 +280,8 @@
 <li><p><strong>Load</strong> the data to be explore
 Data must be supplied :</p>
 <ul class="simple">
-<li><p>to the :class:<code class="docutils literal notranslate"><span class="pre">LatentSpaceInterface</span></code> class in the form of a <em>n_observations x n_variables</em> :obj:<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p></li>
-<li><p>as a CSV file via the app file loader interface.</p></li>
+<li><p>To the :class:<code class="docutils literal notranslate"><span class="pre">~lse.LatentSpaceInterface</span></code> class in the form of a <em>n_observations x n_variables</em> :obj:<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p></li>
+<li><p>As CSV file(s) via the :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA</span></code> interface.</p></li>
 </ul>
 <p>🎉 Calendar features are automatically extracted from :obj:<code class="docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code>.</p>
 </li>
@@ -300,8 +300,11 @@ Data must be supplied :</p>
 </ul>
 </li>
 <li><p><strong>Export</strong> the data :
-The <code class="docutils literal notranslate"><span class="pre">Export</span></code> section let you export the matrix of reconstructed data as a CSV file.</p>
-<p>A pickled :obj:<code class="docutils literal notranslate"><span class="pre">AppBackend</span></code> object exposing the data and the processing and plotting methods can be retrieved.</p>
+The <code class="docutils literal notranslate"><span class="pre">Export</span></code> section let you export:</p>
+<ul class="simple">
+<li><p>The matrix of reconstructed data as a CSV file</p></li>
+<li><p>A pickled :class:<code class="docutils literal notranslate"><span class="pre">~lse.libs.backend.AppBackend</span></code> object exposing the data, processing and plotting methods to be used offline.</p></li>
+</ul>
 </li>
 </ol>
 </section>

@@ -354,6 +354,11 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.CheckpointComponent.NUMERIC_FEATURES">
+<span class="sig-name descname"><span class="pre">NUMERIC_FEATURES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'numeric-features'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.CheckpointComponent.NUMERIC_FEATURES" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="lse.libs.dash_core.components_models.CheckpointComponent.PCA_MODEL">
 <span class="sig-name descname"><span class="pre">PCA_MODEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pca-model'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.CheckpointComponent.PCA_MODEL" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -370,11 +375,6 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.ComputeComponent.LOAD_DATA">
-<span class="sig-name descname"><span class="pre">LOAD_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'load-data'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.ComputeComponent.LOAD_DATA" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="lse.libs.dash_core.components_models.ComputeComponent.RUN_MODEL_PIPELINE">
 <span class="sig-name descname"><span class="pre">RUN_MODEL_PIPELINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'run-model-pipeline'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.ComputeComponent.RUN_MODEL_PIPELINE" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -384,9 +384,20 @@
 <span class="sig-name descname"><span class="pre">STANDARDIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'standardize-checker'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.ComputeComponent.STANDARDIZE" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.DataLoadingComponent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.dash_core.components_models.</span></span><span class="sig-name descname"><span class="pre">DataLoadingComponent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.dash_core.components_models.DataLoadingComponent" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">_Component</span></code></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.ComputeComponent.UPLOAD_DATA">
-<span class="sig-name descname"><span class="pre">UPLOAD_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'upload-data'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.ComputeComponent.UPLOAD_DATA" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.DataLoadingComponent.LOAD_DATA">
+<span class="sig-name descname"><span class="pre">LOAD_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'load-data'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.DataLoadingComponent.LOAD_DATA" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA">
+<span class="sig-name descname"><span class="pre">UPLOAD_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'upload-data'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -561,8 +572,8 @@
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.PlotControlComponent.PERPLEXITY_SLIDER">
-<span class="sig-name descname"><span class="pre">PERPLEXITY_SLIDER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'perplexity-slider'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.PlotControlComponent.PERPLEXITY_SLIDER" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.PlotControlComponent.PERPLEXITY">
+<span class="sig-name descname"><span class="pre">PERPLEXITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'perplexity'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.PlotControlComponent.PERPLEXITY" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -597,12 +608,12 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="lse.libs.dash_core.components_models.PlotControlComponent.RESET_SIGNATURE">
-<span class="sig-name descname"><span class="pre">RESET_SIGNATURE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'reset-signature'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.PlotControlComponent.RESET_SIGNATURE" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">RESET_SIGNATURE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'reset-signatu&lt;re'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.PlotControlComponent.RESET_SIGNATURE" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_SLIDER">
-<span class="sig-name descname"><span class="pre">VARIANCE_SLIDER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'variance-slider'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_SLIDER" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_FILTER">
+<span class="sig-name descname"><span class="pre">VARIANCE_FILTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'variance-filter'</span></em><a class="headerlink" href="#lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_FILTER" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -732,15 +743,19 @@
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.CheckpointComponent.DATA"><code class="docutils literal notranslate"><span class="pre">CheckpointComponent.DATA</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.CheckpointComponent.FILTERED_DATA"><code class="docutils literal notranslate"><span class="pre">CheckpointComponent.FILTERED_DATA</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.CheckpointComponent.LATENT_MODEL"><code class="docutils literal notranslate"><span class="pre">CheckpointComponent.LATENT_MODEL</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.dash_core.components_models.CheckpointComponent.NUMERIC_FEATURES"><code class="docutils literal notranslate"><span class="pre">CheckpointComponent.NUMERIC_FEATURES</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.CheckpointComponent.PCA_MODEL"><code class="docutils literal notranslate"><span class="pre">CheckpointComponent.PCA_MODEL</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.ComputeComponent"><code class="docutils literal notranslate"><span class="pre">ComputeComponent</span></code></a><ul>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.ComputeComponent.INITIAL_GAUSSIAN_MIXTURE_GUESS"><code class="docutils literal notranslate"><span class="pre">ComputeComponent.INITIAL_GAUSSIAN_MIXTURE_GUESS</span></code></a></li>
-<li><a class="reference internal" href="#lse.libs.dash_core.components_models.ComputeComponent.LOAD_DATA"><code class="docutils literal notranslate"><span class="pre">ComputeComponent.LOAD_DATA</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.ComputeComponent.RUN_MODEL_PIPELINE"><code class="docutils literal notranslate"><span class="pre">ComputeComponent.RUN_MODEL_PIPELINE</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.ComputeComponent.STANDARDIZE"><code class="docutils literal notranslate"><span class="pre">ComputeComponent.STANDARDIZE</span></code></a></li>
-<li><a class="reference internal" href="#lse.libs.dash_core.components_models.ComputeComponent.UPLOAD_DATA"><code class="docutils literal notranslate"><span class="pre">ComputeComponent.UPLOAD_DATA</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.dash_core.components_models.DataLoadingComponent"><code class="docutils literal notranslate"><span class="pre">DataLoadingComponent</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.dash_core.components_models.DataLoadingComponent.LOAD_DATA"><code class="docutils literal notranslate"><span class="pre">DataLoadingComponent.LOAD_DATA</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA"><code class="docutils literal notranslate"><span class="pre">DataLoadingComponent.UPLOAD_DATA</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.DropdownComponent"><code class="docutils literal notranslate"><span class="pre">DropdownComponent</span></code></a><ul>
@@ -786,7 +801,7 @@
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.GET_FULL_SIGNATURE"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.GET_FULL_SIGNATURE</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.LATENT_SPACE_PLOT"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.LATENT_SPACE_PLOT</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.LOADINGS_CHECKER"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.LOADINGS_CHECKER</span></code></a></li>
-<li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.PERPLEXITY_SLIDER"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.PERPLEXITY_SLIDER</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.PERPLEXITY"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.PERPLEXITY</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.PLOT_TYPE"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.PLOT_TYPE</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.PROBA_FILTER"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.PROBA_FILTER</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.RANDOM_SAMPLE"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.RANDOM_SAMPLE</span></code></a></li>
@@ -794,7 +809,7 @@
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.RESET_COMPONENTS"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.RESET_COMPONENTS</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.RESET_SAMPLE"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.RESET_SAMPLE</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.RESET_SIGNATURE"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.RESET_SIGNATURE</span></code></a></li>
-<li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_SLIDER"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.VARIANCE_SLIDER</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_FILTER"><code class="docutils literal notranslate"><span class="pre">PlotControlComponent.VARIANCE_FILTER</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#lse.libs.dash_core.components_models.ProcessComponent"><code class="docutils literal notranslate"><span class="pre">ProcessComponent</span></code></a><ul>
