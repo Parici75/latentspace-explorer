@@ -286,7 +286,7 @@
 </section>
 <section id="probability-filter">
 <h2>Probability filter<a class="headerlink" href="#probability-filter" title="Link to this heading">¶</a></h2>
-<p>This Gaussian mixture model can be further used to filter the distribution via the :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.PlotControlComponent.PROBA_FILTER</span></code> slider. Decreasing slider’s high bound filters out data point of decreasing log-probability (i.e., outliers) ; conversely, increasing slider’s low bound filters out the most normal data points, hence highlighting outliers.</p>
+<p>This Gaussian mixture model can be further used to filter the distribution via the <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.PlotControlComponent.PROBA_FILTER" title="lse.libs.dash_core.components_models.PlotControlComponent.PROBA_FILTER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PROBA_FILTER</span></code></a> slider. Decreasing slider’s high bound filters out data point of decreasing log-probability (i.e., outliers) ; conversely, increasing slider’s low bound filters out the most normal data points, hence highlighting outliers.</p>
 </section>
 <section id="plot-clusters">
 <h2>Plot clusters<a class="headerlink" href="#plot-clusters" title="Link to this heading">¶</a></h2>
@@ -295,8 +295,8 @@
 </section>
 <section id="gini-impurity-index">
 <h2>Gini impurity index<a class="headerlink" href="#gini-impurity-index" title="Link to this heading">¶</a></h2>
-<p>When slicing the data along a dimension, this inset displays the <a class="reference external" href="https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity"><em>weighted average gini impurity index</em></a> of the Gaussian model on the partition defined by :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.DropdownComponent.DATA_SLICER</span></code>.</p>
-<p>This metrics quantifies how well the partition of the data by the :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.DropdownComponent.DATA_SLICER</span></code> dimension is reflected in the Gaussian mixture model’s clustering.</p>
+<p>When slicing the data along a dimension, this inset displays the <a class="reference external" href="https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity"><em>weighted average gini impurity index</em></a> of the Gaussian model on the partition defined by <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.DropdownComponent.DATA_SLICER" title="lse.libs.dash_core.components_models.DropdownComponent.DATA_SLICER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DATA_SLICER</span></code></a>.</p>
+<p>This metrics quantifies how well the partition of the data by the <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.DropdownComponent.DATA_SLICER" title="lse.libs.dash_core.components_models.DropdownComponent.DATA_SLICER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DATA_SLICER</span></code></a> dimension is reflected in the Gaussian mixture model’s clustering.</p>
 </section>
 <section id="plot-tabs">
 <h2>Plot tabs<a class="headerlink" href="#plot-tabs" title="Link to this heading">¶</a></h2>
@@ -304,14 +304,14 @@
 <h3>Datum reconstruction<a class="headerlink" href="#datum-reconstruction" title="Link to this heading">¶</a></h3>
 <p>When hovering on a data point in the low-dimensional plot, the <strong>“signature”</strong> (i.e., reconstructed signals using PCs capturing <em>x</em>% of the variance in the data) is drawn in the form of a radar plot in the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">reconstruction</span></code> tab.</p>
 <ul class="simple">
-<li><p>Radar plot signature can be modified via the :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE</span></code> dropdown menu. Variable options are ordered in descending order of their contribution (i.e. <em>loading</em>) onto the first selected PC.</p></li>
-<li><p>The :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_FILTER</span></code> can be used to control the % of variance retained when fitting the Latent Gaussian model and reconstructing signal.</p></li>
+<li><p>Radar plot signature can be modified via the <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE" title="lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIGNATURE</span></code></a> dropdown menu. Variable options are ordered in descending order of their contribution (i.e. <em>loading</em>) onto the first selected PC.</p></li>
+<li><p>The <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_FILTER" title="lse.libs.dash_core.components_models.PlotControlComponent.VARIANCE_FILTER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VARIANCE_FILTER</span></code></a> can be used to control the % of variance retained when fitting the Latent Gaussian model and reconstructing signal.</p></li>
 </ul>
 </section>
 <section id="pc-loadings">
 <h3>PC loadings<a class="headerlink" href="#pc-loadings" title="Link to this heading">¶</a></h3>
-<p>This inset shows a barplot of <em>loadings</em> of the original :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE</span></code> variables onto the selected PC, sorted by decreasing order of magnitude.</p>
-<p>The :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.PlotControlComponent.RESET</span></code> button reinitializes the list of :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE</span></code> variables with the 3 most contributing variables on the first selected PC.</p>
+<p>This inset shows a barplot of <em>loadings</em> of the original <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE" title="lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIGNATURE</span></code></a> variables onto the selected PC, sorted by decreasing order of magnitude.</p>
+<p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">RESET</span></code> button reinitializes the list of <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE" title="lse.libs.dash_core.components_models.DropdownComponent.SIGNATURE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SIGNATURE</span></code></a> variables with the 3 most contributing variables on the first selected PC.</p>
 </section>
 </section>
 </section>

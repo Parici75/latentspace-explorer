@@ -278,7 +278,8 @@
 <p><strong><a class="reference external" href="https://github.com/Parici75/latentspace-explorer"><code class="docutils literal notranslate"><span class="pre">Latentspace-explorer</span></code></a></strong> is a data analysis toolbox based on <a class="reference external" href="https://plotly.com/dash/">Dash</a> that let you easily dive into multivariate data.</p>
 <p>The library was designed as a user-friendly tool for carrying out interactive exploratory data analysis of multidimensional dataset.</p>
 <p>Data exploration in Jupyter notebooks can be tedious and lead to a pile of endless variations of statistical visualization plots.</p>
-<p>latentspace-explorer combines dimensionality reduction, probability density estimation, and clustering techniques to enable deep exploration of multivariate datasets across different facets.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Latentspace-explorer</span></code> combines dimensionality reduction, probability density estimation, and clustering techniques to enable deep exploration of multivariate datasets across different facets.</p>
+<p><img alt="latentspaceexplorer-demo" src="_static/latentspaceexplorer-demo.gif" /></p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -287,30 +288,6 @@
 </div>
 <div class="toctree-wrapper compound">
 </div>
-<section id="latent-space-models">
-<h2>Latent space models<a class="headerlink" href="#latent-space-models" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code> orchestrates and combines three different flavours of latent space models:</p>
-<ul>
-<li><p><a class="reference external" href="https://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/">Principal component analysis</a> is a linear dimensionality reduction technique used to remap original datapoints along “principal axes” best describing the variance in the data.</p>
-<p>Principal components’ embeddings can be thought of as latent variables composed of linear combinations of the original variables which are selected to maximize the variance of the data in that projection.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code>, PCA is used both as a <em>dimensionality reduction</em> algorithm for visualization purpose, and a <em>signal tuning</em> technique to filter out components of low variance in the data.</p>
-</li>
-<li><p><a class="reference external" href="https://lvdmaaten.github.io/tsne/">T-distributed Stochastic Neighbor Embedding</a> is a non-linear technique aimed at preserving the relative distant between data points. Compared to PCA, it handles outliers better and preserve the local structure in the data.</p>
-<p>The t-SNE’s embeddings can be thought of as latent variables encoding a discontinuous proximity map capturing proximal similarity of data points in their original coordinates.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code>, t-SNE is used as a <em>dimensionality reduction</em> algorithm for visualization purpose, complementary to the principal component analysis approach.</p>
-</li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/mixture.html">Gaussian Mixture Models</a> are probabilistic models that assume the datapoints are generated from a mixture of Gaussian distributions (or components).</p>
-<p>The gaussian components can be thought of as latent variables, which, in contrast to the example above, take the form of a <em>probability</em> for a data point to originate from the corresponding gaussian distribution.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code>, Gaussian Mixture Models are used for <em>smooth clustering</em> and performing <em>multivariate anomaly quantification</em>.</p>
-</li>
-</ul>
-<section id="additional-references">
-<h3>Additional References<a class="headerlink" href="#additional-references" title="Link to this heading">¶</a></h3>
-<p><a class="reference external" href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues">Making sense of Principal Component Analysis</a>, a concise yet enlightning introduction to Principal Component Analysis on <em>stackoverflow</em>.</p>
-<p><a class="reference external" href="https://medium.com/swlh/t-sne-explained-math-and-intuition-94599ab164cf">t-SNE explained</a>, by Achinoam Soroker on <em>Medium</em>.</p>
-<p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/05.12-gaussian-mixtures.html">In Depth: Gaussian Mixture Models</a>, by Jake VanderPlas.</p>
-</section>
-</section>
 <section id="indices-and-tables">
 <h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -371,10 +348,6 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Latentspace-explorer</a><ul>
-<li><a class="reference internal" href="#latent-space-models">Latent space models</a><ul>
-<li><a class="reference internal" href="#additional-references">Additional References</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 <li><a class="reference internal" href="#changelog">Changelog</a></li>
 </ul>

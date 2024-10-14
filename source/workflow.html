@@ -280,10 +280,10 @@
 <li><p><strong>Load</strong> the data to be explore
 Data must be supplied :</p>
 <ul class="simple">
-<li><p>To the :class:<code class="docutils literal notranslate"><span class="pre">~lse.LatentSpaceInterface</span></code> class in the form of a <em>n_observations x n_variables</em> :obj:<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p></li>
-<li><p>As CSV file(s) via the :obj:<code class="docutils literal notranslate"><span class="pre">~lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA</span></code> interface.</p></li>
+<li><p>To the <a class="reference internal" href="lse.html#lse.LatentSpaceInterface" title="lse.LatentSpaceInterface"><code class="xref py py-class docutils literal notranslate"><span class="pre">LatentSpaceInterface</span></code></a> class in the form of a <em>n_observations x n_variables</em> <code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p></li>
+<li><p>As CSV file(s) via the <a class="reference internal" href="lse.libs.dash_core.html#lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA" title="lse.libs.dash_core.components_models.DataLoadingComponent.UPLOAD_DATA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UPLOAD_DATA</span></code></a> interface.</p></li>
 </ul>
-<p>🎉 Calendar features are automatically extracted from :obj:<code class="docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code>.</p>
+<p>🎉 Calendar features are automatically extracted from <code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DatetimeIndex</span></code>.</p>
 </li>
 <li><p><strong>Select</strong> the variables (a.k.a. features) to be included in the analysis. All numeric columns available in the DataFrame are preselected.</p>
 <p>💡 Data can be standardized prior to Principal Components Analysis. Note that while standardization is mandatory for variance analysis when feature dynamic range are not on the same scale, it can be detrimental on some dataset by inflating low variance components, and therefore noise, in the data.</p>
@@ -303,7 +303,7 @@ Data must be supplied :</p>
 The <code class="docutils literal notranslate"><span class="pre">Export</span></code> section let you export:</p>
 <ul class="simple">
 <li><p>The matrix of reconstructed data as a CSV file</p></li>
-<li><p>A pickled :class:<code class="docutils literal notranslate"><span class="pre">~lse.libs.backend.AppBackend</span></code> object exposing the data, processing and plotting methods to be used offline.</p></li>
+<li><p>A pickled <a class="reference internal" href="lse.libs.backend.html#lse.libs.backend.AppBackend" title="lse.libs.backend.AppBackend"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppBackend</span></code></a> object exposing the data, processing and plotting methods to be used offline.</p></li>
 </ul>
 </li>
 </ol>

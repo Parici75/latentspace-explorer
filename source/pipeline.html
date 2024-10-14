@@ -277,15 +277,15 @@
 <h1>Latent space models<a class="headerlink" href="#latent-space-models" title="Link to this heading">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code> orchestrates and combines three different flavours of latent space models:</p>
 <ul>
-<li><p><a class="reference external" href="https://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/">Principal component analysis</a> is a linear dimensionality reduction technique used to remap original datapoints along “principal axes” best describing the variance in the data.</p>
+<li><p><strong>Principal component analysis</strong><a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> is a linear dimensionality reduction technique used to remap original datapoints along “principal axes” best describing the variance in the data.</p>
 <p>Principal components’ embeddings can be thought of as latent variables composed of linear combinations of the original variables which are selected to maximize the variance of the data in that projection.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code>, PCA is used both as a <em>dimensionality reduction</em> algorithm for visualization purpose, and a <em>signal tuning</em> technique to filter out components of low variance in the data.</p>
 </li>
-<li><p><a class="reference external" href="https://lvdmaaten.github.io/tsne/">T-distributed Stochastic Neighbor Embedding</a> is a non-linear technique aimed at preserving the relative distant between data points. Compared to PCA, it handles outliers better and preserve the local structure in the data.</p>
+<li><p><strong>T-distributed Stochastic Neighbor Embedding</strong><a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> is a non-linear technique aimed at preserving the relative distant between data points. Compared to PCA, it handles outliers better and preserve the local structure in the data.</p>
 <p>The t-SNE’s embeddings can be thought of as latent variables encoding a discontinuous proximity map capturing proximal similarity of data points in their original coordinates.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code>, t-SNE is used as a <em>dimensionality reduction</em> algorithm for visualization purpose, complementary to the principal component analysis approach.</p>
 </li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/mixture.html">Gaussian Mixture Models</a> are probabilistic models that assume the datapoints are generated from a mixture of Gaussian distributions (or components).</p>
+<li><p><strong>Gaussian Mixture Models</strong><a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> are probabilistic models that assume the datapoints are generated from a mixture of Gaussian distributions (or components).</p>
 <p>The gaussian components can be thought of as latent variables, which, in contrast to the example above, take the form of a <em>probability</em> for a data point to originate from the corresponding gaussian distribution.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">latentspace-explorer</span></code>, Gaussian Mixture Models are used for <em>smooth clustering</em> and performing <em>multivariate anomaly quantification</em>.</p>
 </li>
@@ -296,7 +296,25 @@
 <p><a class="reference external" href="https://medium.com/swlh/t-sne-explained-math-and-intuition-94599ab164cf">t-SNE explained</a>, by Achinoam Soroker on <em>Medium</em>.</p>
 <p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/05.12-gaussian-mixtures.html">In Depth: Gaussian Mixture Models</a>, by Jake VanderPlas.</p>
 </section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
 </section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/">Everything you did and didn’t know about PCA</a>, by Alex Williams.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://lvdmaaten.github.io/tsne/">t-SNE implementations</a>, by Laurens van der Maaten.</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/mixture.html">GMM with scikit-learn</a>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> user guide.</p>
+</aside>
+</aside>
 
         </article>
       </div>
@@ -355,6 +373,7 @@
             <ul>
 <li><a class="reference internal" href="#">Latent space models</a><ul>
 <li><a class="reference internal" href="#additional-references">Additional References</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>

@@ -289,21 +289,33 @@
 </section>
 <section id="compression-or-inflation-of-the-feature-space">
 <h2>Compression or inflation of the feature space?<a class="headerlink" href="#compression-or-inflation-of-the-feature-space" title="Link to this heading">¶</a></h2>
-<p>With images, for example, which are inherently high dimensional, convolutional neural network (CNN) architectures tend to produce lower dimension latent space: if we consider the most high-level <em>feature maps</em> of CNNs to be the latent variables encoding relevant characteristics for the learning task at stake, the original LeNet5<a href="#id7"><span class="problematic" id="id1">[^1]</span></a> implementation indeed compresses 32x32 (=1024) features into a high-level, low-dimensional space of size 5x5x10 (=400), that is, a compression rate of ~2.5. As architecture becomes more complex however, this compression rate drops: for example, VGG16 compresses images of size 224x224x3(=150528) into a latent representation of size 14x14x512 (=100352), which amounts to a compression rate of “only” 1.5.</p>
+<p>With images, for example, which are inherently high dimensional, convolutional neural network (CNN) architectures tend to produce lower dimension latent space: if we consider the most high-level <em>feature maps</em> of CNNs to be the latent variables encoding relevant characteristics for the learning task at stake, the original LeNet5<a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> implementation indeed compresses 32x32 (=1024) features into a high-level, low-dimensional space of size 5x5x10 (=400), that is, a compression rate of ~2.5. As architecture becomes more complex however, this compression rate drops: for example, VGG16 compresses images of size 224x224x3(=150528) into a latent representation of size 14x14x512 (=100352), which amounts to a compression rate of “only” 1.5.</p>
 <p>In pratice, the information is always compressed within CNN, because these architectures are designed to extract deep, hierarchical representations of the original pixel space by stacking more and more convolutional layers, while limiting the “width” of the layers (i.e., the number of convolutional filters) to avoid overfitting.</p>
-<p>But Transformer architectures provide an extreme example of the opposite procedure: inflating the dimensionality of the feature space. Indeed, from an original unidimensional feature space constitued of <em>tokens</em> (where one word or <em>subword</em> is mapped onto a numeric value), a large language encoder model like BERT produces embeddings of size 1024 (BERT Large) or 768 (BERT Base)<a href="#id8"><span class="problematic" id="id2">[^2]</span></a>. These embeddings are the hidden latent variables encoding at once, the denotation of the word and its semantic context, hence its meaning.</p>
+<p>But Transformer architectures provide an extreme example of the opposite procedure: inflating the dimensionality of the feature space. Indeed, from an original unidimensional feature space constitued of <em>tokens</em> (where one word or <em>subword</em> is mapped onto a numeric value), a large language encoder model like BERT produces embeddings of size 1024 (BERT Large) or 768 (BERT Base)<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. These embeddings are the hidden latent variables encoding at once, the denotation of the word and its semantic context, hence its meaning.</p>
 <p>These deep embeddings solve the problem that the meaning of the word can not be directly inferred from the sole occurence of a word in a sentence: meaning depends not only on the denotation of the word, but also on the surrounding words, the syntactic structure, and even the broader context endowed by the preceding and subsequent sentences.</p>
 <p>Large language model’s embeddings are thus the hidden latent variables of words that reflect how they are used by humans to convey meaning.</p>
-<p>Similarly, Matrix Factorization techniques used in Recommender services<a href="#id9"><span class="problematic" id="id3">[^3]</span></a> build user and item latent spaces which encode the proximity between them, thus allowing to make recommendation on the straightforward and efficient assumptions that 1) item interactions define user similarity and 2) similar users share taste.</p>
+<p>Similarly, Matrix Factorization techniques used in Recommender services<a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> build user and item latent spaces which encode the proximity between them, thus allowing to make recommendation on the straightforward and efficient assumptions that 1) item interactions define user similarity and 2) similar users share taste.</p>
 <p>As Data scientists / ML engineers, our job is to exploit these latent variables, explicitely or under the hood, to solve a business problem.</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
-<p><a href="#id10"><span class="problematic" id="id4">[^1]</span></a><a class="reference external" href="https://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf">Lecun, Y.; Bottou, L.; Bengio, Y.; Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE. 86 (11): 2278–2324</a></p>
-<p><a href="#id11"><span class="problematic" id="id5">[^2]</span></a><a class="reference external" href="https://arxiv.org/abs/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a></p>
-<p><a href="#id12"><span class="problematic" id="id6">[^3]</span></a><a class="reference external" href="https://lazyprogrammer.me/tutorial-on-collaborative-filtering-and-matrix-factorization-in-python/">Tutorial on Collaborative Filtering and Matrix Factorization in Python</a></p>
 </section>
 </section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf">Lecun, Y.; Bottou, L.; Bengio, Y.; Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE. 86 (11): 2278–2324</a></p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://arxiv.org/abs/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a></p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://lazyprogrammer.me/tutorial-on-collaborative-filtering-and-matrix-factorization-in-python/">Tutorial on Collaborative Filtering and Matrix Factorization in Python</a></p>
+</aside>
+</aside>
 
         </article>
       </div>

@@ -43,10 +43,6 @@ Latentspace-explorer
    source/lse.rst
 
 
-.. include:: source/pipeline.md
-   :parser: myst_parser.sphinx_
-
-
 Indices and tables
 ------------------
 
