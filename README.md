@@ -74,7 +74,7 @@ make run-app
 
 This target builds a `latentspaceexplorer-app` docker image, pulls a `Redis` image and start the containers on `localhost` via `docker-compose`.
 
-The app will be accessible at `http://localhost:8050/`
+The app will be accessible at `http://localhost:8050/`.
 
 Spreadsheets of data can be loaded via the `Ìmport` section.
 
@@ -122,7 +122,7 @@ Adapting this toolbox to a specific use case typically involves:
 Limitations
 -
 ### Working with big data
-`latentspace-explorer` does not work with big data: the full dataset needs to fit on the RAM of the machine executing the application.
+`latentspace-explorer` does not currently cope with big data: the full dataset needs to fit on the RAM of the machine executing the application.
 
 ### Number of points rendered
 By default, the number of points displayed is limited to avoid cluttering the UI. Beyond this limit, the most "abnormal" data points (i.e. with the highest negative log-probabilities) are filtered out automatically.

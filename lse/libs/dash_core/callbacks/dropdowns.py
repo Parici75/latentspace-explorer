@@ -32,6 +32,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
     def display_available_features(
         data_check: bool, session_id: str
     ) -> tuple[list[dict[str, Any]], list[str]]:
+        """Sets features selection options."""
         if data_check:
             app_backend = load_online_session(session_id)
             return (
@@ -41,6 +42,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
 
         return [], []
 
+    # Principal components preselection
     @app.callback(
         Output(DropdownComponent.PC_SELECTOR, "options"),
         Output(DropdownComponent.PC_SELECTOR, "value"),
@@ -58,7 +60,8 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
         pc_selector: list[int],
         session_id: str,
     ) -> tuple[list[dict[str, Any]], list[int]]:
-        # Components preselection
+        """Manages Principal components preselection."""
+
         ctx = dash.callback_context
 
         if data_check:
@@ -87,6 +90,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
 
         raise PreventUpdate
 
+    # Signature variables selection
     @app.callback(
         Output(DropdownComponent.SIGNATURE, "options"),
         Output(DropdownComponent.SIGNATURE, "value"),
@@ -102,7 +106,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
         signature_reset: int,
         session_id: str,
     ) -> tuple[list[dict[str, Any]], list[Any]]:
-        # Signature preselection
+        """Sets signature variables options."""
         ctx = dash.callback_context
 
         if len(pc_selector) > 0:
@@ -135,8 +139,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
 
         raise PreventUpdate
 
-    ## Selector callback
-    # Variables selection
+    # Plot cues selectors
     @app.callback(
         Output(DropdownComponent.DATA_SLICER, "options"),
         Output(DropdownComponent.DATA_SLICER, "value"),
@@ -173,7 +176,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901 PLR0915
         str,
         list[dict[str, Any]],
     ]:
-        """Set the dropdown selectors"""
+        """Sets plot cues dropdown selectors."""
         if data_check:
             app_backend = load_online_session(session_id)
 
