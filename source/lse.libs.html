@@ -517,6 +517,22 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="lse.libs.data_models.LatentModelType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.data_models.</span></span><span class="sig-name descname"><span class="pre">LatentModelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.data_models.LatentModelType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.data_models.LatentModelType.PCA">
+<span class="sig-name descname"><span class="pre">PCA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'pca'</span></em><a class="headerlink" href="#lse.libs.data_models.LatentModelType.PCA" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lse.libs.data_models.LatentModelType.TSNE">
+<span class="sig-name descname"><span class="pre">TSNE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tsne'</span></em><a class="headerlink" href="#lse.libs.data_models.LatentModelType.TSNE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="lse.libs.data_models.PlotType">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.data_models.</span></span><span class="sig-name descname"><span class="pre">PlotType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.data_models.PlotType" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="#lse.libs.data_models.PrettyEnum" title="lse.libs.data_models.PrettyEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrettyEnum</span></code></a></p>
@@ -588,7 +604,7 @@
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="lse.libs.exceptions.LatentSpaceModelFittingError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.exceptions.</span></span><span class="sig-name descname"><span class="pre">LatentSpaceModelFittingError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ModelType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.exceptions.LatentSpaceModelFittingError" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lse.libs.exceptions.</span></span><span class="sig-name descname"><span class="pre">LatentSpaceModelFittingError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lse.libs.data_models.LatentModelType" title="lse.libs.data_models.LatentModelType"><span class="pre">LatentModelType</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lse.libs.exceptions.LatentSpaceModelFittingError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
@@ -668,6 +684,11 @@
 <li><a class="reference internal" href="#lse.libs.data_models.ClusterType"><code class="docutils literal notranslate"><span class="pre">ClusterType</span></code></a><ul>
 <li><a class="reference internal" href="#lse.libs.data_models.ClusterType.GAUSSIAN_COMPONENT"><code class="docutils literal notranslate"><span class="pre">ClusterType.GAUSSIAN_COMPONENT</span></code></a></li>
 <li><a class="reference internal" href="#lse.libs.data_models.ClusterType.PLOT"><code class="docutils literal notranslate"><span class="pre">ClusterType.PLOT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lse.libs.data_models.LatentModelType"><code class="docutils literal notranslate"><span class="pre">LatentModelType</span></code></a><ul>
+<li><a class="reference internal" href="#lse.libs.data_models.LatentModelType.PCA"><code class="docutils literal notranslate"><span class="pre">LatentModelType.PCA</span></code></a></li>
+<li><a class="reference internal" href="#lse.libs.data_models.LatentModelType.TSNE"><code class="docutils literal notranslate"><span class="pre">LatentModelType.TSNE</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#lse.libs.data_models.PlotType"><code class="docutils literal notranslate"><span class="pre">PlotType</span></code></a><ul>
