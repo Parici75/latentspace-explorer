@@ -1,7 +1,5 @@
-import copy
 from enum import Enum
 
-from mltoolbox.latent_space import ModelType
 from pydantic import BaseModel as PydanticBaseModel
 from pydantic import ConfigDict
 
@@ -33,4 +31,6 @@ class PlotType(str, PrettyEnum):
     HEATMAP = "heatmap"
 
 
-LatentModelType = copy.copy(ModelType)
+class LatentModelType(str, Enum):
+    PCA = "pca"
+    TSNE = "tsne"

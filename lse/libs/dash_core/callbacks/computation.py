@@ -48,22 +48,6 @@ def _get_gmm_hyperparameters(
     return n_kernels, covariance_type
 
 
-def _fit_gaussian_model(
-    session_id: str, n_kernels: int, covariance_type: str, min_var_retained: float
-) -> bool:
-    app_backend = load_online_session(session_id)
-    app_backend.fit_gaussian_model(
-        n_kernels=n_kernels, covariance_type=covariance_type, min_var_retained=min_var_retained
-    )
-    return True
-
-
-def _fit_latent_models(session_id: str, pc_list: list[int], perplexity: int) -> bool:
-    app_backend = load_online_session(session_id)
-    app_backend.fit_latent_models(pc_list=pc_list, perplexity=perplexity)
-    return True
-
-
 CACHE_MANAGER = FlaskCacheManager()
 
 
@@ -95,9 +79,7 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901
         if n_clicks_pipeline > 0:
 
             # Flush user cach
-            CACHE_MANAGER.flush_cache(
-                _get_gmm_hyperparameters, _reconstruct_data, _fit_gaussian_model, _fit_latent_models
-            )
+            CACHE_MANAGER.flush_cache(_get_gmm_hyperparameters, _reconstruct_data)
             get_gmm_hyperparameters = CACHE_MANAGER.memoize_function(_get_gmm_hyperparameters)
 
             # Update the cached data
@@ -158,11 +140,10 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901
     ) -> tuple[bool, bool]:
 
         if data_check:
+            app_backend = load_online_session(session_id)
             logger.debug(f"Fitting Latent space models with PCs: {pc_selector}")
 
-            fit_latent_models = CACHE_MANAGER.memoize_function(_fit_latent_models)
-            fit_latent_models(
-                session_id=session_id,
+            app_backend.fit_latent_models(
                 pc_list=pc_selector,
                 perplexity=perplexity,
             )
@@ -199,14 +180,12 @@ def add_callbacks(app: dash.Dash) -> None:  # noqa: C901
                 covariance_type = "diag"
 
             # Fit
+            app_backend = load_online_session(session_id)
             logger.debug(
                 f"Fitting Gaussian model with {n_kernels} kernels and {covariance_type} covariance"
                 " matrix"
             )
-
-            fit_gaussian_model = CACHE_MANAGER.memoize_function(_fit_gaussian_model)
-            fit_gaussian_model(
-                session_id=session_id,
+            app_backend.fit_gaussian_model(
                 n_kernels=n_kernels,
                 covariance_type=covariance_type,
                 min_var_retained=var_explained,
